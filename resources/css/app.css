@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo { height: 48px; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-orcamento {
+    border: 1px solid #e91e8c;
+    color: #e91e8c !important;
+    border-radius: 20px;
+    padding: 6px 18px;
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    height: 520px;
+    background-image: url('/imagens/hero-festa.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0 60px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.hero-buttons { display: flex; gap: 16px; }
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: white;
+    color: #222;
+    border: 2px solid white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}

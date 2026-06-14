@@ -1,0 +1,142 @@
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo { height: 48px; }
+
+.nav-links {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-orcamento {
+    border: 1px solid #e91e8c;
+    color: #e91e8c !important;
+    border-radius: 20px;
+    padding: 6px 18px;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    position: relative;
+    height: 750px;
+    background-image: url('/images/hero-festa.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0 60px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.hero-buttons { display: flex; gap: 16px; }
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+ /* ====== SOBRE =============*/
+ .sobre {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 60px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sobre-imagem img {
+    width: 420px;
+    height: 680px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.sobre-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #222;
+}
+
+.sobre-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.btn-sobre {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: 2px solid #222;
+    border-radius: 24px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-sobre:hover {
+    background: #222;
+    color: white;
+}
