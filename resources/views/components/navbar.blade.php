@@ -1,13 +1,34 @@
 <nav class="navbar">
-    <a href="{{ route('home') }}">
-        <img src="{{ asset('images/logo.png') }}" alt="Anauê" class="logo">
-    </a>
-    <ul class="nav-links">
-        <li><a href="{{ route('home') }}">Início</a></li>
-        <li><a href="{{ route('sobre') }}">Sobre</a></li>
-        <li><a href="#">Pacotes</a></li>
-        <li><a href="#">Galeria</a></li>
-        <li><a href="#">Depoimentos</a></li>
-        <li><a href="#" class="btn-orcamento">Orçamento</a></li>
-    </ul>
+
+    <div class="nav-container">
+
+        <div class="nav-left">
+            <a href="{{ route('home') }}">Início</a>
+            <a href="#">Pacotes</a>
+            <a href="#">Galeria</a>
+        </div>
+
+        <a href="{{ route('home') }}" class="logo-link">
+            <img
+                src="{{ asset('images/logo.png') }}"
+                alt="Logo Anauê"
+                class="logo"
+            >
+        </a>
+
+        <div class="nav-right">
+            <a href="{{ route('sobre') }}">Sobre</a>
+            <a href="#">Depoimentos</a>
+
+            <a href="#" class="btn-orcamento">
+                Orçamento
+            </a>
+
+            <a href="#" class="usuario">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+
+    </div>
+
 </nav>

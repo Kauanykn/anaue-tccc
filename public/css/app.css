@@ -1,97 +1,419 @@
 /* ===== NAVBAR ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 40px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
 }
 
-.logo { height: 48px; }
+.nav-container {
+    width: 100%;
+    min-height: 60;
+    padding: 0 35px;
+   
 
-.nav-links {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 28px;
-    list-style: none;
-    margin: 0; padding: 0;
 }
 
-.nav-links a {
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav-left {
+    justify-content: flex-end;
+    padding-right: 45px;
+}
+
+.nav-right {
+    justify-content: flex-start;
+    padding-left: 45px;
+}
+
+.nav-left a,
+.nav-right a {
+    color: #222222;
     text-decoration: none;
-    color: #333;
-    font-size: 14px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
     font-weight: 500;
+    white-space: nowrap;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    display: block;
+    width: 125px;
+    height: auto;
 }
 
 .btn-orcamento {
-    border: 1px solid #e91e8c;
-    color: #e91e8c !important;
-    border-radius: 20px;
-    padding: 6px 18px;
+    padding: 8px 18px;
+    border: 1px solid #52c9e8;
+    border-radius: 30px;
+    color: #249ebc !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
 }
 
+.btn-orcamento:hover {
+    background-color: #52c9e8;
+    color: #ffffff !important;
+}
+
+.usuario {
+    font-size: 23px !important;
+}
 /* ===== HERO ===== */
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --rosa: #f30b78;
+    --rosa-escuro: #d80768;
+    --preto: #111111;
+    --cinza: #555555;
+    --borda: #d8d8d8;
+    --fundo: #fafafa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 .hero {
-    position: relative;
-    height: 750px;
-    background-image: url('/images/hero-festa.jpg');
-    background-size: cover;
-    background-position: center;
+    min-height: calc(100vh - 70px);
+    padding: 55px 30px 30px;
+    background-color: var(--fundo);
+}
+
+.hero__container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.hero__principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 335px;
+    gap: 50px;
+}
+
+/* Texto */
+
+.hero__texto {
+    max-width: 520px;
+}
+
+.hero__categoria {
     display: flex;
     align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--rosa);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+.hero__categoria span {
+    width: 11px;
+    height: 1px;
+    background-color: var(--rosa);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    padding: 0 60px;
-    max-width: 600px;
+.hero__texto h1 {
+    margin: 0 0 15px;
+    color: var(--preto);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 45px);
+    line-height: 1.1;
+    text-transform: uppercase;
 }
 
-.hero-content h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 16px;
+.hero__texto p {
+    max-width: 440px;
+    margin: 0 0 26px;
+    color: var(--cinza);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.45;
 }
 
-.hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 28px;
-    line-height: 1.6;
+/* Botões */
+
+.hero__botoes {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
 }
 
-.hero-buttons { display: flex; gap: 16px; }
-
-.btn {
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-size: 15px;
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 10px 17px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-.btn-primary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+.botao:hover {
+    transform: translateY(-2px);
 }
 
-.btn-outline {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+.botao--rosa {
+    background-color: var(--rosa);
+    color: #ffffff;
+}
+
+.botao--rosa:hover {
+    background-color: var(--rosa-escuro);
+}
+
+.botao--contorno {
+    border-color: #222222;
+    background-color: transparent;
+    color: #222222;
+}
+
+.botao--contorno:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+/* Fotos */
+
+.hero__fotos {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.foto-polaroid {
+    position: absolute;
+    overflow: hidden;
+    padding: 9px 9px 30px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 3px 7px 12px rgba(0, 0, 0, 0.22);
+}
+
+.foto-polaroid img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.foto-polaroid--1 {
+    top: 0;
+    left: 16%;
+    width: 175px;
+    height: 215px;
+    z-index: 2;
+    transform: rotate(-9deg);
+}
+
+.foto-polaroid--2 {
+    top: 80px;
+    right: 2%;
+    width: 185px;
+    height: 205px;
+    z-index: 1;
+    transform: rotate(-4deg);
+}
+
+.foto-polaroid--3 {
+    bottom: 0;
+    left: 18%;
+    width: 170px;
+    height: 190px;
+    z-index: 3;
+}
+
+/* Estatísticas */
+
+.hero__estatisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 45px;
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+.estatistica {
+    display: flex;
+    min-height: 85px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.estatistica:not(:last-child) {
+    border-right: 1px solid var(--borda);
+}
+
+.estatistica strong {
+    color: var(--preto);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.estatistica span {
+    margin-top: 5px;
+    color: var(--cinza);
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero__principal {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero__texto {
+        max-width: 650px;
+    }
+
+    .hero__fotos {
+        max-width: 520px;
+        height: 360px;
+        margin: 0 auto;
+    }
+
+    .foto-polaroid--1 {
+        left: 10%;
+    }
+
+    .foto-polaroid--2 {
+        right: 8%;
+    }
+
+    .foto-polaroid--3 {
+        left: 34%;
+    }
+
+    .hero__estatisticas {
+        margin-top: 25px;
+    }
+}
+
+/* Celular */
+
+@media (max-width: 650px) {
+    .hero {
+        padding: 35px 16px 20px;
+    }
+
+    .hero__texto h1 {
+        font-size: 32px;
+    }
+
+    .hero__texto p {
+        font-size: 16px;
+    }
+
+    .hero__fotos {
+        height: 315px;
+    }
+
+    .foto-polaroid--1 {
+        left: 2%;
+        width: 145px;
+        height: 180px;
+    }
+
+    .foto-polaroid--2 {
+        top: 65px;
+        right: 1%;
+        width: 150px;
+        height: 175px;
+    }
+
+    .foto-polaroid--3 {
+        left: 31%;
+        width: 145px;
+        height: 165px;
+    }
+
+    .hero__estatisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .estatistica:nth-child(2) {
+        border-right: none;
+    }
+
+    .estatistica:nth-child(1),
+    .estatistica:nth-child(2) {
+        border-bottom: 1px solid var(--borda);
+    }
+}
+
+@media (max-width: 420px) {
+    .hero__botoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .botao {
+        width: 100%;
+    }
+
+    .hero__fotos {
+        height: 285px;
+    }
+
+    .foto-polaroid--1 {
+        width: 125px;
+        height: 155px;
+    }
+
+    .foto-polaroid--2 {
+        width: 130px;
+        height: 150px;
+    }
+
+    .foto-polaroid--3 {
+        left: 28%;
+        width: 125px;
+        height: 145px;
+    }
 }
 
  /* ====== SOBRE =============*/
