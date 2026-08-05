@@ -4,7 +4,7 @@
 
 .espaco {
     padding: 90px 30px 50px;
-    background-color: #FCFCFC;
+    background-color: #f3f3f3;
 }
 
 .espaco__container {
@@ -101,7 +101,7 @@
 
 .pacotes-home {
     padding: 50px 30px 80px;
-    background-color: #FCFCFC;
+    background-color: #f3f3f3;
 }
 
 .pacotes-home__container {
@@ -290,7 +290,7 @@
 
 .cta-orcamento {
     padding: 70px 15px;
-    background-color: #fafafa;
+    background-color: #f3f3f3;
 }
 
 .cta-orcamento__container {
