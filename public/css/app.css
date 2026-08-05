@@ -13,7 +13,7 @@
 
 .nav-container {
     width: 100%;
-    min-height: 60;
+    min-height: 70px;
     padding: 0 35px;
    
 
@@ -89,7 +89,7 @@
     --preto: #111111;
     --cinza: #555555;
     --borda: #d8d8d8;
-    --fundo: #fafafa;
+    --fundo: #FCFCFC;
 }
 
 * {
@@ -112,10 +112,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    min-height: 335px;
     gap: 50px;
+    min-height: 430px;
 }
-
 /* Texto */
 
 .hero__texto {
@@ -211,7 +210,7 @@
 .hero__fotos {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 420px;
 }
 
 .foto-polaroid {
@@ -220,7 +219,11 @@
     padding: 9px 9px 30px;
     background-color: #ffffff;
     border-radius: 4px;
-    box-shadow: 3px 7px 12px rgba(0, 0, 0, 0.22);
+     box-shadow: 0 15px 30px rgba(0,0,0,.25);
+     transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    
 }
 
 .foto-polaroid img {
@@ -232,7 +235,7 @@
 
 .foto-polaroid--1 {
     top: 0;
-    left: 16%;
+    left: 10%;
     width: 175px;
     height: 215px;
     z-index: 2;
@@ -240,8 +243,8 @@
 }
 
 .foto-polaroid--2 {
-    top: 80px;
-    right: 2%;
+    top: 150px;
+    right: 120px;
     width: 185px;
     height: 205px;
     z-index: 1;
@@ -249,11 +252,23 @@
 }
 
 .foto-polaroid--3 {
-    bottom: 0;
-    left: 18%;
+   bottom: -60px;
+    left: 12%;
     width: 170px;
     height: 190px;
     z-index: 3;
+}
+
+.foto-polaroid--1:hover{
+    transform: rotate(-13deg) translateY(-10px);
+}
+
+.foto-polaroid--2:hover{
+    transform: rotate(9deg) translateY(-10px);
+}
+
+.foto-polaroid--3:hover{
+    transform: rotate(3deg) translateY(-10px);
 }
 
 /* Estatísticas */
@@ -261,76 +276,38 @@
 .hero__estatisticas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 45px;
-    border-top: 1px solid var(--borda);
-    border-bottom: 1px solid var(--borda);
+    margin-top: 100px;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
 }
 
 .estatistica {
+    min-height: 95px;
+    padding: 18px 10px;
+
     display: flex;
-    min-height: 85px;
-    padding: 12px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     text-align: center;
 }
 
 .estatistica:not(:last-child) {
-    border-right: 1px solid var(--borda);
+    border-right: 1px solid #d8d8d8;
 }
 
 .estatistica strong {
-    color: var(--preto);
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 1;
+    color: #111;
 }
 
 .estatistica span {
-    margin-top: 5px;
-    color: var(--cinza);
-    font-family: Georgia, serif;
-    font-size: 13px;
-}
-
-/* Tablet */
-
-@media (max-width: 900px) {
-    .hero {
-        padding-top: 40px;
-    }
-
-    .hero__principal {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .hero__texto {
-        max-width: 650px;
-    }
-
-    .hero__fotos {
-        max-width: 520px;
-        height: 360px;
-        margin: 0 auto;
-    }
-
-    .foto-polaroid--1 {
-        left: 10%;
-    }
-
-    .foto-polaroid--2 {
-        right: 8%;
-    }
-
-    .foto-polaroid--3 {
-        left: 34%;
-    }
-
-    .hero__estatisticas {
-        margin-top: 25px;
-    }
+    margin-top: 6px;
+    font-size: 14px;
+    color: #555;
 }
 
 /* Celular */
