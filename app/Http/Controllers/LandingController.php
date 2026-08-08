@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Galeria;
+
 class LandingController extends Controller
 {
     public function index()
@@ -14,6 +16,12 @@ class LandingController extends Controller
     {
         return view('sobre.index');
     }
+     public function galeria()
+{
+    $fotos = Galeria::latest()->get();
+
+    return view('galeria.index', compact('fotos'));
+}
 }
 
 
