@@ -401,6 +401,7 @@
     padding: 60px 80px;
     max-width: 1100px;
     margin: 0 auto;
+    
 }
 
 .sobre-imagem img {
@@ -411,10 +412,11 @@
 }
 
 .sobre-content h2 {
-    font-size: 2rem;
+    font-size: 50px;
     font-weight: 700;
     margin-bottom: 16px;
     color: #222;
+    font-family: 'Playfair Display';
 }
 
 .sobre-content p {
@@ -422,6 +424,7 @@
     line-height: 1.7;
     color: #444;
     margin-bottom: 12px;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .btn-sobre {
