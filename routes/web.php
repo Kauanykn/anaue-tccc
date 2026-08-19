@@ -32,3 +32,7 @@ Route::get('/cadastro', [RegisterController::class, 'show'])
 
 Route::post('/cadastro', [RegisterController::class, 'register'])
     ->name('register.store');
+
+Route::view('/cliente/dashboard', 'cliente.dashboard')
+->middleware('auth')
+->name('cliente.dashboard');
