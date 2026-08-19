@@ -354,6 +354,7 @@
     text-decoration: none;
 
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .cta-orcamento__botao span {
