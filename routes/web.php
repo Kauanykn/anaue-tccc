@@ -39,3 +39,6 @@ Route::post('/cadastro', [RegisterController::class, 'register'])
 Route::view('/cliente/dashboard', 'cliente.dashboard')
 ->middleware('auth')
 ->name('cliente.dashboard');
+
+Route::post('/logout', [LoginController::class, 'logout'])
+    ->name('logout');

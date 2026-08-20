@@ -201,9 +201,18 @@ body {
 @media (max-width: 800px) {
 
     .sidebar {
-        width: 75px;
-
-        padding: 25px 12px;
+        width: 210px;
+        min-height: 100vh;
+    
+        flex-shrink: 0;
+    
+        padding: 28px 18px;
+    
+        background-color: #343434;
+        color: #fff;
+    
+        display: flex;
+        flex-direction: column;
     }
 
     .sidebar__logo img {
@@ -258,4 +267,16 @@ body {
         flex-direction: column;
     }
 
+}
+
+.sidebar__menu form {
+    width: 100%;
+}
+
+.btn-sair {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
 }
