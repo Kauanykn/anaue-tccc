@@ -2,6 +2,8 @@
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\DepoimentoController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 
