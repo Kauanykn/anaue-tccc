@@ -24,9 +24,15 @@
                 Orçamento
             </a>
 
-            <a href="#" class="usuario">
-                <i class="fa-regular fa-user"></i>
-            </a>
+           @auth
+    <a href="{{ route('cliente.dashboard') }}" class="usuario">
+        <i class="fa-solid fa-user"></i>
+    </a>
+@else
+    <a href="{{ route('login') }}" class="usuario">
+        <i class="fa-regular fa-user"></i>
+    </a>
+@endauth
         </div>
 
     </div>
