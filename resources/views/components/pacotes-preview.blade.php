@@ -13,7 +13,7 @@
             <article class="pacote-card">
                 <div class="pacote-card__imagem">
                     <img
-                        src="{{ asset('images/pacotes/coquetel.jpg') }}"
+                        src="{{ asset('images/pacotes/coquetel.jpeg') }}"
                         alt="Pacote Coquetel"
                     >
                 </div>
@@ -30,7 +30,7 @@
             <article class="pacote-card">
                 <div class="pacote-card__imagem">
                     <img
-                        src="{{ asset('images/pacotes/festa-2.jpg') }}"
+                        src="{{ asset('images/pacotes/festa-2.jpeg') }}"
                         alt="Pacote Festa 2"
                     >
                 </div>
@@ -47,7 +47,7 @@
             <article class="pacote-card">
                 <div class="pacote-card__imagem">
                     <img
-                        src="{{ asset('images/pacotes/brinca-legal.jpg') }}"
+                        src="{{ asset('images/pacotes/brincalegal.jpeg') }}"
                         alt="Pacote Brinca Legal"
                     >
                 </div>

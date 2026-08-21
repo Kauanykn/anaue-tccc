@@ -12,8 +12,8 @@
                 <h1>Anauê Espaço Infantil</h1>
 
                 <p>
-                    Um universo de diversão, momentos mágicos que encantam
-                    crianças e surpreendem famílias.
+                    Um universo de diversão repleto de momentos mágicos, onde cada detalhe encanta as crianças, 
+                    surpreende as famílias e transforma qualquer celebração em uma experiência inesquecível.
                 </p>
 
                 <div class="hero__botoes">
