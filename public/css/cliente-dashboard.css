@@ -280,3 +280,62 @@ body {
     font-family: inherit;
     cursor: pointer;
 }
+
+.sidebar {
+    width: 210px;
+    min-height: 100vh;
+
+    flex-shrink: 0;
+
+    padding: 28px 18px;
+
+    background-color: #343434;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar__logout {
+    width: 100%;
+    margin-top: auto;
+}
+
+.btn-logout {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 12px 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-logout i,
+.btn-logout span {
+    color: #fff;
+}
+
+.btn-logout:hover {
+    background-color: #f20b78;
+}

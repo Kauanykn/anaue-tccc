@@ -24,10 +24,16 @@ class RegisterController extends Controller
             'password' => ['required', 'min:8'],
         ], [
             'name.required' => 'Digite seu nome.',
+
             'email.required' => 'Digite seu email.',
             'email.email' => 'Digite um email válido.',
             'email.unique' => 'Esse email já está cadastrado.',
+
             'telefone.required' => 'Digite seu telefone.',
+            'telefone.min' => 'Digite um telefone válido.',
+            'telefone.max' => 'Digite um telefone válido.',
+            'telefone.unique' => 'Esse telefone já está cadastrado.',
+            
             'password.required' => 'Digite uma senha.',
             'password.min' => 'A senha precisa ter pelo menos 8 caracteres.',
         ]);

@@ -23,6 +23,14 @@
 </head>
 
 <body>
+    <form
+    id="form-logout"
+    action="{{ route('logout') }}"
+    method="POST"
+    style="display: none;"
+>
+    @csrf
+</form>
 
 <div class="dashboard">
 
@@ -57,6 +65,11 @@
             </a>
 
         </nav>
+
+        <button type="submit"form="form-logout" class="btn-logout">
+             <i class="fa-solid fa-arrow-right-from-bracket"></i>
+             <span>Sair</span>
+        </button>
 
     </aside>
 
