@@ -9,6 +9,7 @@
 @section('content')
 
 <section class="galeria">
+
     <div class="galeria__container">
         
         <div class="galeria__cabecalho">

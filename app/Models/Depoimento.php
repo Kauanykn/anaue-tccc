@@ -3,12 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Depoimento extends Model
 {
     protected $fillable = [
-        'nome',
+        'usuario_id',
         'nota',
         'comentario',
     ];
+
+    public function usuario()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
