@@ -1,0 +1,455 @@
+/* =========================
+   PÁGINA
+========================= */
+
+.pacote-detalhes {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 55px 20px 100px;
+
+    background-color: #fff;
+
+    font-family: 'Inter', Arial, sans-serif;
+
+    color: #1f1f1f;
+}
+
+.pacote-detalhes__container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.pacote-topo {
+    margin-bottom: 35px;
+
+    text-align: center;
+}
+
+.pacote-topo > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #f20b78;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.pacote-topo h1 {
+    margin: 0 0 8px;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.pacote-topo p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.pacote-banner {
+    width: 100%;
+    height: 420px;
+
+    margin-bottom: 40px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+}
+
+.pacote-banner img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   CARDÁPIO
+========================= */
+
+.cardapio {
+    padding-bottom: 45px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.cardapio > h2 {
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.cardapio-grupo {
+    margin-bottom: 28px;
+}
+
+.cardapio-grupo:last-child {
+    margin-bottom: 0;
+}
+
+.cardapio-grupo h3 {
+    margin-bottom: 9px;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cardapio-grupo ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.cardapio-grupo li {
+    margin-bottom: 5px;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cardapio-grupo li::before {
+    content: "•";
+
+    margin-right: 8px;
+
+    color: #f20b78;
+}
+
+
+/* =========================
+   INFORMAÇÕES / VALORES
+========================= */
+
+.pacote-observacao {
+    padding: 45px 0 25px;
+
+    text-align: center;
+}
+
+.pacote-observacao span {
+    color: #888;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.pacote-observacao h2 {
+    margin: 8px 0;
+
+    font-size: 30px;
+}
+
+.pacote-observacao p {
+    color: #666;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CARD DE VALORES
+========================= */
+
+/* =========================
+   VALORES
+========================= */
+
+.valores-card {
+    width: 100%;
+
+    padding: 28px 38px 22px;
+
+    margin-bottom: 45px;
+
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+
+    background-color: #fff;
+}
+
+
+/* GRUPOS */
+
+.valores-grupo h3 {
+    margin: 0 0 25px;
+
+    color: #555;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+/* LINHAS */
+
+.valor-linha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+.valor-linha > span {
+    color: #1f1f1f;
+
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.valor-linha strong {
+    color: #222;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.valor-linha strong span {
+    color: #f20b78;
+
+    font-size: 23px;
+    font-weight: 500;
+}
+
+
+/* DIVISOR */
+
+.divisor-valores {
+    width: 100%;
+    height: 1px;
+
+    margin: 28px 0 22px;
+
+    background-color: #d8d8d8;
+}
+
+
+/* CONVIDADO EXCEDENTE */
+
+.valor-excedente {
+    margin-top: 38px;
+
+    color: #222;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+.valor-excedente strong {
+    font-weight: 700;
+}
+
+
+/* OBSERVAÇÃO */
+
+.valor-observacao {
+    margin: 15px 0 0;
+
+    color: #777;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    .valores-card {
+        padding: 25px 20px;
+    }
+
+    .valores-grupo h3 {
+        font-size: 13px;
+    }
+
+    .valor-linha > span {
+        font-size: 18px;
+    }
+
+    .valor-linha strong {
+        font-size: 17px;
+    }
+
+    .valor-linha strong span {
+        font-size: 20px;
+    }
+
+    .valor-excedente {
+        font-size: 15px;
+    }
+
+    .valor-observacao {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.pacote-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    background-color: #f7f7f7;
+}
+
+.pacote-cta h2 {
+    margin: 0 0 6px;
+
+    font-size: 21px;
+}
+
+.pacote-cta p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+.btn-orcamento-pacote {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    background-color: #f20b78;
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.btn-orcamento-pacote:hover {
+    background-color: #d9096c;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 700px) {
+
+    .pacote-detalhes {
+        padding: 40px 16px 70px;
+    }
+
+    .pacote-topo h1 {
+        font-size: 31px;
+    }
+
+    .pacote-banner {
+        height: 280px;
+    }
+
+    .pacote-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .pacote-banner {
+        height: 220px;
+    }
+
+    .valor-linha {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+.descricao-pacote {
+    margin-bottom: 45px;
+}
+
+.descricao-pacote h2 {
+    margin-bottom: 15px;
+
+    font-size: 26px;
+}
+
+.descricao-pacote p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.cardapio-conteudo {
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.9;
+}

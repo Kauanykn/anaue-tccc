@@ -4,6 +4,8 @@ use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DepoimentoController;
+use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
+use App\Http\Controllers\PacoteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,6 +23,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('galeria', GaleriaController::class)
         ->parameters(['galeria' => 'galeria'])
         ->except(['show']);
+
+    Route::resource('pacotes', AdminPacoteController::class)
+        ->except(['show']);
+
 
 });
 
@@ -41,4 +47,11 @@ Route::view('/cliente/dashboard', 'cliente.dashboard')
 ->name('cliente.dashboard');
 
 Route::post('/logout', [LoginController::class, 'logout'])
+
     ->name('logout');
+
+Route::get('/pacotes', [PacoteController::class, 'index'])
+    ->name('pacotes');
+
+Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])
+    ->name('pacotes.show');

@@ -4,7 +4,7 @@
 
         <div class="nav-left">
             <a href="{{ route('home') }}">Início</a>
-            <a href="#">Pacotes</a>
+            <a href="{{ route('pacotes') }}">Pacotes</a>
             <a href="{{ route('galeria') }}">Galeria</a>
         </div>
 
