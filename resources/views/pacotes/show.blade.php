@@ -201,6 +201,80 @@
 
         </section>
 
+        <section class="adicionais">
+
+    <div class="adicionais__topo">
+        <span>Personalize sua festa</span>
+        <h2>Adicionais</h2>
+
+        <p>
+            Os itens abaixo não estão inclusos no pacote
+            e são cobrados à parte.
+        </p>
+    </div>
+
+
+    <div class="adicionais__grupo">
+
+        <h3>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Festa
+        </h3>
+
+        <div class="adicional-item">
+            <span>Arco de bexiga na entrada</span>
+            <strong>R$ 220,00</strong>
+        </div>
+
+        <div class="adicional-item">
+            <span>Monitor exclusivo</span>
+            <strong>R$ 90,00</strong>
+        </div>
+
+        <div class="adicional-item">
+            <span>Rolha para chope</span>
+            <strong>R$ 150,00</strong>
+        </div>
+
+        <div class="adicional-item">
+            <span>Rolha para cerveja</span>
+            <strong>R$ 125,00</strong>
+        </div>
+
+        <div class="adicional-item">
+            <span>Balde com gelo</span>
+            <strong>R$ 13,00</strong>
+        </div>
+
+    </div>
+
+
+    <div class="adicionais__grupo">
+
+        <h3>
+            <i class="fa-solid fa-burger"></i>
+            Alimentação e bebidas
+        </h3>
+
+        <div class="adicional-item">
+            <span>Mini hambúrguer caseiro</span>
+            <strong>R$ 9,00</strong>
+        </div>
+
+        <div class="adicional-item">
+            <span>Batata frita - 50 pessoas</span>
+            <strong>R$ 275,00</strong>
+        </div>
+
+        <div class="adicional-item">
+            <span>Batata recheada</span>
+            <strong>R$ 6,00</strong>
+        </div>
+
+    </div>
+
+    </section>
+
 
         <div class="pacote-cta">
 
