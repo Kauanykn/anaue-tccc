@@ -4,7 +4,7 @@
 
         <div class="nav-left">
             <a href="{{ route('home') }}">Início</a>
-            <a href="#">Pacotes</a>
+            <a href="{{ route('pacotes') }}">Pacotes</a>
             <a href="{{ route('galeria') }}">Galeria</a>
         </div>
 
@@ -18,7 +18,7 @@
 
         <div class="nav-right">
             <a href="{{ route('sobre') }}">Sobre</a>
-            <a href="#">Depoimentos</a>
+            <a href="{{ route('depoimentos') }}">Depoimentos</a>
 
             <a href="#" class="btn-orcamento">
                 Orçamento

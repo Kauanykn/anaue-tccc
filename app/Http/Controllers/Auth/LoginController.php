@@ -28,6 +28,10 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
+            if ($request->filled('redirect')) {
+                return redirect($request->input('redirect'));
+            }
+
             return redirect()->route('home');
         }
 

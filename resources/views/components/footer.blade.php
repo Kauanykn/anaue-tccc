@@ -62,7 +62,8 @@
 
             <div class="footer__redes">
 
-                <a href="#">
+                <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiZxMqrsLiWAxXnHbkGHchzL5kQFnoECBYQAQ&url=https%3A%2F%2Fwww.instagram.com%2Fanaue.espaco%2F%3Fhl%3Den&usg=AOvVaw3Fo7ef_zq_JgOfKDnvehjS&opi=89978449"
+                target="blank">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 

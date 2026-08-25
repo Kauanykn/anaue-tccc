@@ -1,0 +1,681 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f5f6f8;
+    color: #252525;
+}
+
+/* =========================
+   PÁGINA
+========================= */
+
+.admin-pacote {
+    width: 100%;
+    min-height: 100vh;
+    padding: 45px 20px 80px;
+}
+
+.admin-pacote__container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================
+   TOPO
+========================= */
+
+.admin-pacote__topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.admin-pacote__topo span {
+    display: block;
+    margin-bottom: 6px;
+
+    color: #f20b78;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.admin-pacote__topo h1 {
+    margin: 0 0 7px;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.admin-pacote__topo p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.btn-voltar:hover {
+    border-color: #f20b78;
+    color: #f20b78;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.form-pacote {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.form-secao {
+    padding: 28px 30px;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.form-secao h2 {
+    margin: 0 0 22px;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form-secao h3 {
+    margin: 25px 0 15px;
+
+    color: #555;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-ajuda {
+    margin: -12px 0 20px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.form-grid--precos {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.campo-grande {
+    grid-column: auto;
+}
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.campo:last-child {
+    margin-bottom: 0;
+}
+
+.campo label {
+    margin-bottom: 8px;
+
+    color: #444;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #222;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    border-color: #f20b78;
+
+    box-shadow: 0 0 0 3px rgba(242, 11, 120, 0.08);
+}
+
+.campo small {
+    margin-top: 6px;
+
+    color: #888;
+
+    font-size: 11px;
+}
+
+/* =========================
+   INPUT DE ARQUIVO
+========================= */
+
+.campo input[type="file"] {
+    padding: 9px;
+
+    background: #fafafa;
+}
+
+/* =========================
+   CHECKBOXES
+========================= */
+
+.checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    margin-top: 5px;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #444;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.checkboxes input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #f20b78;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+.form-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-cancelar,
+.btn-salvar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-cancelar {
+    border: 1px solid #d5d5d5;
+
+    background: #fff;
+
+    color: #555;
+}
+
+.btn-cancelar:hover {
+    background: #f1f1f1;
+}
+
+.btn-salvar {
+    border: none;
+
+    background: #f20b78;
+
+    color: #fff;
+}
+
+.btn-salvar:hover {
+    background: #d9096c;
+
+    transform: translateY(-1px);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 750px) {
+
+    .admin-pacote {
+        padding: 30px 15px 60px;
+    }
+
+    .admin-pacote__topo {
+        flex-direction: column;
+    }
+
+    .form-grid,
+    .form-grid--precos {
+        grid-template-columns: 1fr;
+    }
+
+    .form-secao {
+        padding: 24px 20px;
+    }
+
+    .form-acoes {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancelar,
+    .btn-salvar {
+        width: 100%;
+    }
+}
+
+/* =========================
+   LISTAGEM DE PACOTES
+========================= */
+
+.admin-pacotes-lista {
+    min-height: 100vh;
+    padding: 45px 20px 80px;
+
+    background: #f5f6f8;
+}
+
+.btn-novo-pacote {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 17px;
+
+    border-radius: 8px;
+
+    background: #f20b78;
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.btn-novo-pacote:hover {
+    background: #d9096c;
+
+    transform: translateY(-1px);
+}
+
+
+/* MENSAGEM DE SUCESSO */
+
+.mensagem-sucesso {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 25px;
+    padding: 14px 18px;
+
+    border-radius: 8px;
+
+    background: #e8f8ec;
+
+    color: #238636;
+
+    font-size: 13px;
+}
+
+
+/* GRID */
+
+.admin-pacotes-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* CARD */
+
+.admin-pacote-card {
+    overflow: hidden;
+
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+
+    background: #fff;
+
+    transition: 0.2s;
+}
+
+.admin-pacote-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+/* IMAGEM */
+
+.admin-pacote-card__imagem {
+    position: relative;
+
+    width: 100%;
+    height: 190px;
+}
+
+.admin-pacote-card__imagem img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* STATUS */
+
+.status-pacote {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-pacote.ativo {
+    background: #e4f8e8;
+    color: #208536;
+}
+
+.status-pacote.inativo {
+    background: #eee;
+    color: #666;
+}
+
+
+/* CONTEÚDO */
+
+.admin-pacote-card__conteudo {
+    padding: 18px;
+}
+
+.admin-pacote-card__conteudo h2 {
+    margin: 0 0 6px;
+
+    font-size: 18px;
+}
+
+.admin-pacote-card__conteudo p {
+    margin: 0 0 20px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* AÇÕES */
+
+.admin-pacote-card__acoes {
+    display: flex;
+
+    gap: 8px;
+}
+
+.admin-pacote-card__acoes form {
+    flex: 1;
+}
+
+.btn-editar,
+.btn-excluir {
+    width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 9px 12px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.btn-editar {
+    flex: 1;
+
+    border: 1px solid #dadada;
+
+    background: #fff;
+
+    color: #444;
+}
+
+.btn-editar:hover {
+    border-color: #f20b78;
+
+    color: #f20b78;
+}
+
+.btn-excluir {
+    border: 1px solid #ffd6d6;
+
+    background: #fff5f5;
+
+    color: #d83434;
+}
+
+
+/* SEM PACOTES */
+
+.pacotes-vazio {
+    padding: 70px 30px;
+
+    border: 1px dashed #ccc;
+    border-radius: 12px;
+
+    background: #fff;
+
+    text-align: center;
+}
+
+.pacotes-vazio > i {
+    margin-bottom: 15px;
+
+    color: #bbb;
+
+    font-size: 35px;
+}
+
+.pacotes-vazio h2 {
+    margin: 0 0 7px;
+
+    font-size: 19px;
+}
+
+.pacotes-vazio p {
+    margin-bottom: 20px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.pacotes-vazio a {
+    color: #f20b78;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    .admin-pacotes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .admin-pacotes-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.imagem-atual {
+    width: 220px;
+    height: 140px;
+
+    overflow: hidden;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.imagem-atual img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.mensagem-erros {
+    margin-bottom: 25px;
+    padding: 15px 18px;
+
+    border: 1px solid #ffcaca;
+    border-radius: 8px;
+
+    background-color: #fff1f1;
+
+    color: #b92828;
+
+    font-size: 13px;
+}
+
+.mensagem-erros p {
+    margin: 4px 0;
+}
