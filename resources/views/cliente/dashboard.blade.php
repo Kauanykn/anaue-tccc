@@ -68,9 +68,23 @@
         Alterar foto
     </button>
 
+    @if(Auth::user()->avatar)
+    <form action="{{ route('cliente.avatar.remover') }}" method="POST">
+        @csrf
+        @method('DELETE')
+    
+        <button type="submit" class="remover-foto">
+            <i class="fa-solid fa-trash"></i>
+            Remover foto
+        </button>
+    </form>
+    
+    
+    @endif
 </div>
 
     </form>
+
 
 </section>
 

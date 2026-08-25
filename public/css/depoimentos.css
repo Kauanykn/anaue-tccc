@@ -1,27 +1,728 @@
-.depoimento-usuario {
+/* =========================================================
+   DEPOIMENTOS - PÁGINA COMPLETA
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.depoimentos {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 55px 30px 80px;
+    color: #292929;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.depoimentos-topo {
     display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin-bottom: 45px;
+}
+
+.depoimentos-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #ff428d;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.depoimentos-topo h1 {
+    max-width: 650px;
+
+    margin: 0 0 14px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.depoimentos-topo p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #777;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BOTÃO AVALIAR
+========================================================= */
+
+.btn-avaliar {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 9px;
+
+    background-color: #ff428d;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    margin-top: 45px;
+}
+
+.btn-avaliar:hover {
+    background-color: #e91f72;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESUMO DAS AVALIAÇÕES
+========================================================= */
+
+.avaliacoes-resumo {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 50px;
+
+    padding: 30px;
+
+    margin-bottom: 45px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    background-color: #fff;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+}
+
+
+/* MÉDIA */
+
+.media-avaliacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    border-right: 1px solid #eeeeee;
+}
+
+.media-avaliacoes strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.media-avaliacoes .estrelas {
+    margin: 10px 0 6px;
+
+    color: #f6c744;
+
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.media-avaliacoes small {
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DISTRIBUIÇÃO DAS NOTAS
+========================================================= */
+
+.distribuicao-notas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.linha-nota {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
     align-items: center;
     gap: 12px;
 }
 
+.linha-nota span {
+    color: #555;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.linha-nota small {
+    color: #888;
+
+    font-size: 11px;
+    text-align: right;
+}
+
+.barra-nota {
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background-color: #eeeeee;
+}
+
+.barra-preenchida {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background-color: #ff428d;
+
+    transition: width 0.3s ease;
+}
+
+
+/* =========================================================
+   GRID DOS DEPOIMENTOS
+========================================================= */
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card-depoimento {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 285px;
+
+    padding: 25px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 15px;
+
+    background-color: #fff;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.035);
+
+    transition: 0.2s ease;
+}
+
+.card-depoimento:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   USUÁRIO
+========================================================= */
+
+.depoimento-usuario {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
 .depoimento-avatar,
 .depoimento-avatar-letra {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
     border-radius: 50%;
 }
 
 .depoimento-avatar {
     object-fit: cover;
+
+    border: 2px solid #ff428d;
 }
 
 .depoimento-avatar-letra {
     display: flex;
     align-items: center;
     justify-content: center;
+
     background-color: #ff428d;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
+    color: #fff;
+
+    font-size: 19px;
+    font-weight: 700;
 }
 
+.depoimento-usuario h2 {
+    margin: 0 0 3px;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.depoimento-usuario small {
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NOTA DO DEPOIMENTO
+========================================================= */
+
+.nota-depoimento {
+    margin-bottom: 13px;
+
+    color: #f6c744;
+
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   COMENTÁRIO
+========================================================= */
+
+.comentario-depoimento {
+    flex: 1;
+
+    margin: 0 0 20px;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.data-depoimento {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   AÇÕES DO DEPOIMENTO
+========================================================= */
+
+.acoes-depoimento {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: auto;
+}
+
+.btn-editar-depoimento,
+.btn-excluir-depoimento {
+    padding: 8px 11px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-editar-depoimento {
+    border: 1px solid #ff428d;
+
+    background-color: #fff;
+    color: #ff428d;
+}
+
+.btn-editar-depoimento:hover {
+    background-color: #ff428d;
+    color: #fff;
+}
+
+.btn-excluir-depoimento {
+    border: 1px solid #eeeeee;
+
+    background-color: #fff;
+    color: #888;
+}
+
+.btn-excluir-depoimento:hover {
+    border-color: #e05252;
+
+    background-color: #e05252;
+    color: #fff;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-avaliacao {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: rgba(30, 30, 30, 0.55);
+
+    backdrop-filter: blur(3px);
+}
+
+.modal-avaliacao.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background-color: #fff;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+
+    animation: abrirModal 0.25s ease;
+}
+
+@keyframes abrirModal {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   FECHAR MODAL
+========================================================= */
+
+.modal-fechar {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: transparent;
+    color: #777;
+
+    font-size: 27px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.modal-fechar:hover {
+    background-color: #f3f3f3;
+    color: #222;
+}
+
+
+/* =========================================================
+   TÍTULO DO MODAL
+========================================================= */
+
+.modal-conteudo h2 {
+    margin: 0 0 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.modal-conteudo > p {
+    margin: 0 0 25px;
+
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo-nota,
+.campo-comentario {
+    margin-bottom: 22px;
+}
+
+.campo-nota label,
+.campo-comentario label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #444;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ESTRELAS DO MODAL
+========================================================= */
+
+.estrelas-input {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+}
+
+.estrela-avaliacao {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: #f6c744;
+
+    font-size: 40px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+}
+
+.estrela-avaliacao:hover {
+    transform: scale(1.12);
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.campo-comentario textarea {
+    width: 100%;
+    min-height: 120px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    outline: none;
+
+    resize: vertical;
+
+    background-color: #fff;
+
+    color: #333;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+
+    transition: 0.2s ease;
+}
+
+.campo-comentario textarea::placeholder {
+    color: #aaa;
+}
+
+.campo-comentario textarea:focus {
+    border-color: #ff428d;
+
+    box-shadow: 0 0 0 3px rgba(255, 66, 141, 0.1);
+}
+
+
+/* =========================================================
+   BOTÃO DO MODAL
+========================================================= */
+
+.btn-enviar-avaliacao {
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #ff428d;
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-enviar-avaliacao:hover {
+    background-color: #e91f72;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVO - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .depoimentos {
+        padding: 40px 25px 60px;
+    }
+
+    .depoimentos-topo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .depoimentos-topo h1 {
+        font-size: 36px;
+    }
+
+    .avaliacoes-resumo {
+        grid-template-columns: 180px 1fr;
+
+        gap: 30px;
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVO - CELULAR
+========================================================= */
+
+@media (max-width: 620px) {
+
+    .depoimentos {
+        padding: 30px 18px 50px;
+    }
+
+    .depoimentos-topo {
+        margin-bottom: 30px;
+    }
+
+    .depoimentos-topo h1 {
+        font-size: 30px;
+    }
+
+    .depoimentos-topo p {
+        font-size: 14px;
+    }
+
+    .btn-avaliar {
+        width: 100%;
+    }
+
+    .avaliacoes-resumo {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 25px;
+    }
+
+    .media-avaliacoes {
+        padding-bottom: 20px;
+
+        border-right: none;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-depoimento {
+        min-height: 0;
+    }
+
+    .modal-conteudo {
+        padding: 28px 22px;
+    }
+
+    .estrela-avaliacao {
+        font-size: 34px;
+    }
+}

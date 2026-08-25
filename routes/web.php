@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\PacoteController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -15,10 +16,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('pacotes', AdminPacoteController::class)->except(['show']);
 
-
 });
-
-
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
 
@@ -28,12 +26,12 @@ Route::get('/galeria', [LandingController::class, 'galeria'])->name('galeria');
 
 Route::get('/depoimentos', [DepoimentoController::class, 'depoimentos'])->name('depoimentos');
 Route::post('/depoimentos', [DepoimentoController::class, 'store'])->name('depoimentos.store');
-Route::put('/depoimentos/{depoimento}', [DepoimentoController::class, 'update'])->middleware('auth')->name('depoimentos.update');
+Route::put('/depoimentos/{depoimento}', [DepoimentoController::class, 'update'])->middleware(Authenticate::class)->name('depoimentos.update');
+Route::delete('/depoimentos/{depoimento}', [DepoimentoController::class, 'destroy'])->middleware('auth')->name('depoimentos.destroy');
 
-Route::view('/cliente/dashboard', 'cliente.dashboard')->middleware('auth')->name('cliente.dashboard');
-Route::get('/cliente/dashboard', [ClienteController::class, 'dashboard'])->middleware('auth')->name('cliente.dashboard');
-Route::post('/cliente/avatar', [ClienteController::class, 'atualizarAvatar'])->middleware('auth')->name('cliente.avatar');
-Route::delete('/cliente/avatar', [ClienteController::class, 'removerAvatar'])->middleware('auth')->name('cliente.avatar.remover');
+Route::get('/cliente/dashboard', [ClienteController::class, 'dashboard'])->middleware(Authenticate::class)->name('cliente.dashboard');
+Route::post('/cliente/avatar', [ClienteController::class, 'atualizarAvatar'])->middleware(Authenticate::class)->name('cliente.avatar');
+Route::delete('/cliente/avatar', [ClienteController::class, 'removerAvatar'])->middleware(Authenticate::class)->name('cliente.avatar.remover');
     
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.authenticate');

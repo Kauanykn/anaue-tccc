@@ -47,6 +47,12 @@
         <form action="{{ route('login.authenticate') }}" method="POST">
                 @csrf
 
+                <input
+                    type="hidden"
+                    name="redirect"
+                    value="{{ request('redirect') }}"
+                >
+
             <div class="campo-login">
                 <label for="email">Email:</label>
 

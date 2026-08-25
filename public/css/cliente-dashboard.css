@@ -222,7 +222,8 @@ body {
 }
 
 .escolher-arquivo,
-.alterar-foto {
+.alterar-foto,
+.remover-foto {
     display: inline-flex;
     align-items: center;
     justify-content: center;
