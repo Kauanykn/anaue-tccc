@@ -9,6 +9,7 @@ class Depoimento extends Model
 {
     protected $fillable = [
         'usuario_id',
+        'nome',
         'nota',
         'comentario',
     ];

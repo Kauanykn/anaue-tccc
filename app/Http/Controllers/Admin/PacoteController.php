@@ -88,13 +88,13 @@ class PacoteController extends Controller
 
             'cardapio' => ['required', 'string'],
 
-            'preco_semana_30' => ['required', 'numeric', 'min:0'],
-            'preco_semana_50' => ['required', 'numeric', 'min:0'],
+            'preco_semana_30' => ['required', 'numeric', 'min:0', 'max:99999999.99'],
+            'preco_semana_50' => ['required', 'numeric', 'min:0', 'max:99999999.99'],
 
-            'preco_fim_semana_30' => ['required', 'numeric', 'min:0'],
-            'preco_fim_semana_50' => ['required', 'numeric', 'min:0'],
+            'preco_fim_semana_30' => ['required', 'numeric', 'min:0', 'max:99999999.99'],
+            'preco_fim_semana_50' => ['required', 'numeric', 'min:0', 'max:99999999.99'],
 
-            'valor_excedente' => ['required', 'numeric', 'min:0'],
+            'valor_excedente' => ['required', 'numeric', 'min:0', 'max:99999999.99'],
 
             'parcelas' => ['required', 'integer', 'min:1'],
         ]);

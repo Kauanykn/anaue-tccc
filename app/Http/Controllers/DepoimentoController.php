@@ -51,10 +51,10 @@ class DepoimentoController extends Controller
 
         Depoimento::create([
             'usuario_id' => Auth::id(),
+            'nome' => Auth::user()->name,
             'nota' => $request->nota,
             'comentario' => $request->comentario,
         ]);
-
         return redirect()->route('depoimentos');
 
     }
