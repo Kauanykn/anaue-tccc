@@ -319,19 +319,16 @@ Mini hambúrguer"
             <div class="form-acoes">
 
                 <a
-                    href="{{ route('admin.pacotes.indexx') }}"
+                    href="{{ route('admin.pacotes.index') }}"
                     class="btn-cancelar"
                 >
                     Cancelar
                 </a>
 
-                <button type="submit" class="btn-salvar">
-                    <a href="{{ route('admin.pacotes.indexx') }}">
-                       <i class="fa-solid fa-check"></i>
-                    Cadastrar pacote 
-                    </a>
-                    
-                </button>
+        <button type="submit" class="btn-salvar">
+        <i class="fa-solid fa-check"></i>
+        Cadastrar pacote
+        </button>
 
             </div>
 
