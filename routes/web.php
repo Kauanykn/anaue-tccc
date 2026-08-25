@@ -9,6 +9,15 @@ use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PacoteController;
 
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
+
+    Route::resource('pacotes', AdminPacoteController::class)->except(['show']);
+
+
+});
+
 
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
@@ -16,7 +25,6 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/sobre', [LandingController::class, 'sobre'])->name('sobre');
 
 Route::get('/galeria', [LandingController::class, 'galeria'])->name('galeria');
-Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
 
 Route::get('/depoimentos', [DepoimentoController::class, 'depoimentos'])->name('depoimentos');
 Route::post('/depoimentos', [DepoimentoController::class, 'store'])->name('depoimentos.store');
@@ -35,6 +43,5 @@ Route::post('/cadastro', [RegisterController::class, 'register'])->name('registe
     
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     
-Route::resource('pacotes', AdminPacoteController::class)->except(['show']);
 Route::get('/pacotes', [PacoteController::class, 'index'])->name('pacotes');
 Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])->name('pacotes.show');
