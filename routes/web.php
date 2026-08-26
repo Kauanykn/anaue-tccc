@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DepoimentoController;
 use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
 use App\Http\Controllers\PacoteController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,7 +19,9 @@ Route::get('/galeria', [LandingController::class, 'galeria'])->name('galeria');
 
 Route::get('/depoimentos', [DepoimentoController::class, 'depoimentos'])->name('depoimentos');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])
+    ->group(function  () {
+
 
     Route::resource('galeria', GaleriaController::class)
         ->parameters(['galeria' => 'galeria'])
@@ -55,3 +58,7 @@ Route::get('/pacotes', [PacoteController::class, 'index'])
 
 Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])
     ->name('pacotes.show');
+
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])
+    ->middleware(['auth', 'role:admin'])
+    ->name('admin.dashboard');

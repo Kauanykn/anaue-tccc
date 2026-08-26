@@ -24,9 +24,19 @@ class LoginController extends Controller
             'password.required' => 'Digite sua senha.',
         ]);
 
-        if (Auth::attempt($credentials)) {
+       if (Auth::attempt($credentials)) {
 
             $request->session()->regenerate();
+
+            $usuario = Auth::user();
+
+            if ($usuario->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+
+            if ($usuario->role === 'usuario') {
+                return redirect()->route('cliente.dashboard');
+            }
 
             return redirect()->route('home');
         }
