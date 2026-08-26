@@ -145,6 +145,110 @@ body {
     font-size: 14px;
 }
 
+/*****AVATAR COM FOTO*******/
+
+.avatar-cliente {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 12px;
+
+    border: 3px solid #ff428d;
+}
+
+/*****AVATAR COM LETRA*******/
+
+.avatar-letra {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 12px;
+
+    background-color: #ff428d;
+    color: #fff;
+
+    cursor: default;
+}
+
+/******PERFIL INFORMAÇÕES******/
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.perfil-cliente {
+        margin-bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.meu-perfil-h2 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.perfil-dados h3 {
+    margin-bottom: 5px;
+}
+
+.perfil-dados p {
+    color: #777;
+    font-size: 14px;
+}
+
+.avatar-acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.avatar-acoes input[type="file"] {
+    display: none;
+}
+
+.escolher-arquivo,
+.alterar-foto,
+.remover-foto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff428d;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-bottom: 15px;
+}
+
+.escolher-arquivo:hover,
+.alterar-foto:hover {
+    background-color: #e52f78;
+}
+
+
+
+
 
 /* =========================
    EVENTO

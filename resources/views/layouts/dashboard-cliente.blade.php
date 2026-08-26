@@ -59,10 +59,7 @@
                 <span>Orçamentos</span>
             </a>
 
-            <a href="#" class="sidebar__link">
-                <i class="fa-solid fa-box-open"></i>
-                <span>Meus Dados</span>
-            </a>
+        
 
         </nav>
 

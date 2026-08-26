@@ -263,16 +263,35 @@
 }
 
 .foto-polaroid--1:hover{
-    transform: rotate(-13deg) translateY(-10px);
+    transform: rotate(-17deg) translateY(-10px) scale(1.05);
+    cursor: pointer;
 }
 
+
 .foto-polaroid--2:hover{
-    transform: rotate(9deg) translateY(-10px);
+    transform: rotate(9deg) translateY(-10px) scale(1.05);
+    cursor: pointer;
 }
 
 .foto-polaroid--3:hover{
-    transform: rotate(3deg) translateY(-10px);
+    transform: rotate(9deg) translateY(-10px) scale(1.05);
+    cursor: pointer;
 }
+
+.foto-polaroid--1.zoom {
+    transform: scale(1.3) translateY(20px) rotate(-17deg);
+    z-index: 10;
+}
+.foto-polaroid--2.zoom {
+    transform: scale(1.3) translateY(-20px) rotate(9deg);
+    z-index: 10;
+}
+.foto-polaroid--3.zoom {
+    transform: scale(1.3) translateY(-20px) rotate(9deg);
+    z-index: 10;
+}
+
+
 
 /* Estatísticas */
 

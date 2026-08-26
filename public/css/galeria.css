@@ -146,3 +146,144 @@
         height: 240px;
     }
 }
+
+/* =========================================
+   IMAGEM AMPLIADA / MODAL
+========================================= */
+
+.gallery-image {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.03);
+}
+
+
+/* Fundo escuro */
+.image-modal {
+    display: none;
+
+    position: fixed;
+    z-index: 99999;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.90);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* Quando estiver aberto */
+.image-modal.ativo {
+    display: flex;
+}
+
+
+/* Imagem grande */
+.modal-image {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+}
+
+
+/* Botão X */
+.close-modal {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    color: white;
+
+    font-size: 50px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 100000;
+
+    transition: 0.2s;
+}
+
+.close-modal:hover {
+    color: #ff4f91;
+    transform: scale(1.1);
+}
+
+/* =========================================
+   SETAS DA GALERIA
+========================================= */
+
+.modal-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #222;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.2s ease;
+}
+
+.modal-arrow:hover {
+    background: #ff4f91;
+    color: white;
+
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+/* Seta esquerda */
+
+.modal-prev {
+    left: 30px;
+}
+
+
+/* Seta direita */
+
+.modal-next {
+    right: 30px;
+}

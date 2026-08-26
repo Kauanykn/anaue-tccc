@@ -325,9 +325,9 @@ Mini hambúrguer"
                     Cancelar
                 </a>
 
-        <button type="submit" class="btn-salvar">
-        <i class="fa-solid fa-check"></i>
-        Cadastrar pacote
+          <button type="submit" class="btn-salvar">
+            <i class="fa-solid fa-check"></i>
+             Cadastrar pacote
         </button>
 
             </div>
