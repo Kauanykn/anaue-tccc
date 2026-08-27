@@ -45,7 +45,7 @@
 
     </div>
 
-    <form action="{{ route('cliente.avatar') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('cliente.dashboard') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
 

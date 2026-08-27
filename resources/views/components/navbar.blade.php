@@ -24,15 +24,32 @@
                 Orçamento
             </a>
 
-           @auth
-    <a href="{{ route('cliente.dashboard') }}" class="usuario">
-        <i class="fa-solid fa-user"></i>
-    </a>
-@else
-    <a href="{{ route('login') }}" class="usuario">
-        <i class="fa-regular fa-user"></i>
-    </a>
-@endauth
+
+
+          @auth
+
+        @if(Auth::user()->role === 'admin' || Auth::user()->role === 'super_admin')
+
+            <a href="{{ route('admin.dashboard') }}" class="usuario">
+                <i class="fa-solid fa-user-shield"></i>
+            </a>
+
+        @else
+
+            <a href="{{ route('cliente.dashboard') }}" class="usuario">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        @endif
+
+        @else
+
+        <a href="{{ route('login') }}" class="usuario">
+            <i class="fa-regular fa-user"></i>
+        </a>
+
+        @endauth
+    
         </div>
 
     </div>
