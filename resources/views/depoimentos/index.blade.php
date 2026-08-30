@@ -150,7 +150,7 @@
         </button>
 
         <form
-            action="{{ route('depoimentos.destroy', $depoimento) }}"
+            action="{{ route('depoimento.destroy', $depoimento) }}"
             method="POST"
         >
             @csrf

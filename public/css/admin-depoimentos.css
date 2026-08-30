@@ -1,0 +1,148 @@
+/* =========================================================
+   ADMIN - DEPOIMENTOS
+   Mantém a mesma estética da página pública
+========================================================= */
+
+.admin-depoimentos {
+    padding-top: 55px;
+}
+
+
+/* =========================================================
+   MENSAGEM DE SUCESSO
+========================================================= */
+
+.admin-mensagem-sucesso {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 30px;
+    padding: 14px 18px;
+
+    border: 1px solid #dcefdc;
+    border-radius: 10px;
+
+    background-color: #f6fff6;
+    color: #438043;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.admin-mensagem-sucesso i {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+
+.admin-depoimentos-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 280px;
+    padding: 40px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    background-color: #fff;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+
+    text-align: center;
+}
+
+.admin-depoimentos-vazio > i {
+    margin-bottom: 18px;
+
+    color: #ff428d;
+    font-size: 42px;
+}
+
+.admin-depoimentos-vazio h2 {
+    margin: 0 0 8px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.admin-depoimentos-vazio p {
+    margin: 0;
+
+    color: #888;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   AÇÕES DO ADMIN
+========================================================= */
+
+.admin-acoes {
+    margin-top: auto;
+}
+
+.admin-acoes form {
+    margin: 0;
+}
+
+.admin-acoes .btn-excluir-depoimento {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    border: 1px solid #eeeeee;
+    border-radius: 7px;
+
+    background-color: #fff;
+    color: #888;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.admin-acoes .btn-excluir-depoimento:hover {
+    border-color: #e05252;
+    background-color: #e05252;
+    color: #fff;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .admin-depoimentos {
+        padding-top: 40px;
+    }
+
+}
+
+
+@media (max-width: 620px) {
+
+    .admin-depoimentos {
+        padding-top: 30px;
+    }
+
+    .admin-depoimentos-vazio {
+        padding: 30px 20px;
+    }
+
+}

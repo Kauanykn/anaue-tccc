@@ -1,3 +1,7 @@
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
 .admin-galeria {
     min-height: 100vh;
     padding: 60px 30px;
