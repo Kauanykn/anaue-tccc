@@ -22,14 +22,9 @@
     position: relative;
 }
 
-.espaco__moldura {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    border-radius: 14px;
-}
 
-.espaco__moldura::before {
+
+/* .espaco__moldura::before {
     content: "";
     position: absolute;
     top: 18px;
@@ -39,7 +34,7 @@
     border: 4px solid #70d8e4;
     border-radius: 14px;
     z-index: 0;
-}
+} */
 
 .espaco__moldura img {
     position: relative;

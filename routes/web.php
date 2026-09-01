@@ -44,32 +44,20 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])
 
 });
 
-Route::get('/login', [LoginController::class, 'show'])
-    ->name('login');
+Route::get('/login', [LoginController::class, 'show'])->name('login');
 
-Route::post('/login', [LoginController::class, 'login'])
-    ->name('login.authenticate');
+Route::post('/login', [LoginController::class, 'login'])->name('login.authenticate');
 
-Route::get('/cadastro', [RegisterController::class, 'show'])
-->name('register');
+Route::get('/cadastro', [RegisterController::class, 'show'])->name('register');
 
-Route::post('/cadastro', [RegisterController::class, 'register'])
-    ->name('register.store');
+Route::post('/cadastro', [RegisterController::class, 'register'])->name('register.store');
 
-Route::view('/cliente/dashboard', 'cliente.dashboard')
-->middleware('auth')
-->name('cliente.dashboard');
+Route::view('/cliente/dashboard', 'cliente.dashboard')->middleware('auth')->name('cliente.dashboard');
 
-Route::post('/logout', [LoginController::class, 'logout'])
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-    ->name('logout');
+Route::get('/pacotes', [PacoteController::class, 'index'])->name('pacotes');
 
-Route::get('/pacotes', [PacoteController::class, 'index'])
-    ->name('pacotes');
+Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])->name('pacotes.show');
 
-Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])
-    ->name('pacotes.show');
-
-Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])
-    ->middleware(['auth', 'role:admin'])
-    ->name('admin.dashboard');
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth', 'role:admin'])->name('admin.dashboard');
