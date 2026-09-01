@@ -160,6 +160,7 @@
 
             </a>
 
+            <a href="{{ route('admin.depoimentos.index') }}" class="admin-card-depoimentos">
             <section class="admin-depoimentos-resumo">
     
         <div class="admin-depoimentos-info">
@@ -180,17 +181,18 @@
                         ★★★★★
                     </span>
                 </div>
-    
+                
                 <small>
                     {{ $totalDepoimentos }}
                     {{ $totalDepoimentos == 1 ? 'depoimento cadastrado' : 'depoimentos cadastrados' }}
                 </small>
             </div>
-    
+            
         </div>
-    
+        
         
     </section>
+</a>
         </section>
 
 

@@ -4,7 +4,7 @@
 
 .espaco {
     padding: 90px 30px 50px;
-    background-color: #f3f3f3;
+    background-color: var(--fundo);
 }
 
 .espaco__container {
@@ -70,7 +70,7 @@
 .espaco__conteudo h2 {
     margin: 0 0 8px;
 
-    color: #111111;
+    color: var(--preto);
     font-family: 'DM Sans', sans-serif;
     font-size: 36px;
     line-height: 1.1;
@@ -79,7 +79,7 @@
 .espaco__conteudo h3 {
     margin: 0 0 10px;
 
-    color: #4e4e4e;
+    color: var(--preto);
     font-family: 'DM Sans', sans-serif;
     font-size: 23px;
     line-height: 1.35;
@@ -88,7 +88,7 @@
 .espaco__conteudo p {
     margin: 0;
 
-    color: #4f4f4f;
+    color: var(--cinza);
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -101,7 +101,7 @@
 
 .pacotes-home {
     padding: 50px 30px 80px;
-    background-color: #f3f3f3;
+    background-color: var(--fundo);
 }
 
 .pacotes-home__container {
@@ -133,7 +133,7 @@
 .pacotes-home h2 {
     margin: 0 0 28px;
 
-    color: #111111;
+    color: var(--preto);
     font-family: 'DM Sans', sans-serif;
     font-size: 34px;
     line-height: 1.2;
@@ -183,7 +183,7 @@
      margin-top: 15px;
     margin-bottom: 8px;
 
-    color: #111111;
+    color: var(--preto);
     font-family: 'Playfair Display', serif;
     font-size: 22px;
 }
@@ -192,7 +192,7 @@
     margin: 0 0 8px;
     margin-bottom: 10px;
 
-    color: #5b5b5b;
+    color: var(--cinza);
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
     line-height: 1.45;
@@ -213,9 +213,9 @@
     display: inline-block;
     padding-bottom: 4px;
 
-    border-bottom: 1px solid #111111;
+    border-bottom: 1px solid var(--preto);
 
-    color: #111111;
+    color: var(--preto);
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     text-decoration: none;
@@ -296,7 +296,7 @@
 
 .cta-orcamento {
     padding: 70px 15px;
-    background-color: #f3f3f3;
+    background-color: var(--fundo);
 }
 
 .cta-orcamento__container {

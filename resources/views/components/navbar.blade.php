@@ -49,9 +49,15 @@
         </a>
 
         @endauth
+
+        <button type="button" id="botao-tema" class="botao-tema" aria-label="Alternar tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
     
         </div>
 
     </div>
 
 </nav>
+
+<script src="{{ asset('jss/navbar.js') }}"></script>

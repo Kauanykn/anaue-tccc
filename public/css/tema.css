@@ -1,0 +1,20 @@
+:root {
+    --fundo-tema: #ffffff;
+    --card-tema: #ffffff;
+    --texto-tema: #292929;
+    --texto-secundario-tema: #777777;
+    --borda-tema: #eeeeee;
+}
+
+body.tema-escuro {
+    --fundo-tema: #181818;
+    --card-tema: #242424;
+    --texto-tema: #f5f5f5;
+    --texto-secundario-tema: #aaaaaa;
+    --borda-tema: #3a3a3a;
+
+    --fundo: #242424;
+
+    --preto: #f5f5f5;
+    --cinza: #b5b5b5;
+}
