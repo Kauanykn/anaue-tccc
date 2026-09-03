@@ -508,3 +508,14 @@
 body.tema-escuro .cta-orcamento__container {
     background-color: #38686d;
 }
+body.tema-escuro .cta-orcamento__imagem::before {
+    background-color:var(--fundo);
+}
+body.tema-escuro .cta-orcamento__botao {
+    background-color: var(--fundo);
+    color: var(--texto-tema);
+}
+
+body.tema-escuro .cta-orcamento__botao:hover {
+    color: #f20b78;
+}
