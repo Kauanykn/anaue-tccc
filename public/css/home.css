@@ -399,6 +399,8 @@
 
     transform: rotate(-8deg);
     z-index: 1;
+
+    transition: all 0.5s;
 }
 
 .cta-orcamento__menina {
@@ -410,13 +412,11 @@
     width: 350px;
     height: auto;
 
-    transform: translateY(50px) rotate(0deg) !important;
+    transform: translateY(50px) rotate(0deg);
     z-index: 2;
+    transition: all 0.5s;
 }
 
-.cta-orcamento__menina:hover {
-    transform: translateY(-6px);
-}
 
 .estrela {
     position: absolute;
@@ -538,4 +538,14 @@
 
     z-index: 2;
 }
+}
+
+.cta-orcamento__botao:hover {
+    color: #f20b78;
+    transform: translateX(20px);
+}
+
+.cta-orcamento__container:has(.cta-orcamento__botao:hover) .cta-orcamento__imagem::before {
+    transition: all 0.5s;
+    scale: 1.5;
 }

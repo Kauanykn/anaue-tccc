@@ -518,4 +518,11 @@ body.tema-escuro .cta-orcamento__botao {
 
 body.tema-escuro .cta-orcamento__botao:hover {
     color: #f20b78;
+    transform: translateX(20px);
+}
+
+body.tema-escuro .cta-orcamento__container:has(.cta-orcamento__botao:hover) .cta-orcamento__imagem::before {
+    transition: all 0.5s;
+    background-color: #f20b77b2;
+    scale: 1.5;
 }
