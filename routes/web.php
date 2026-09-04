@@ -45,4 +45,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
         Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
         Route::resource('pacotes', AdminPacoteController::class)->except(['show']);
         Route::resource('depoimentos', AdminDepoimentoController::class)->except(['show']);
-        });
+});
+
+Route::get('/orcamento', function () {
+        return view('orcamento.index');
+})->name('orcamento');
