@@ -356,3 +356,23 @@ body {
     }
 
 }
+
+@media (max-width: 600px) {
+    .admin-dashboard { display: block; }
+    .admin-sidebar { width: 100%; min-height: 64px; padding: 10px 14px; flex-direction: row; align-items: center; gap: 12px; }
+    .admin-logo { margin: 0; }
+    .admin-logo img { width: 48px; }
+    .admin-menu { flex: 1; flex-direction: row; gap: 4px; }
+    .admin-link { width: 42px; justify-content: center; padding: 11px; font-size: 0; }
+    .admin-link i { font-size: 15px; }
+    .admin-logout { margin: 0 0 0 auto; }
+    .admin-logout button { width: 42px; justify-content: center; padding: 11px; font-size: 0; }
+    .admin-logout button i { font-size: 15px; }
+    .admin-conteudo { padding: 28px 18px; }
+    .admin-topo { flex-direction: column; gap: 18px; margin-bottom: 30px; }
+    .admin-topo h1 { font-size: 26px; }
+    .btn-site { width: 100%; justify-content: center; }
+    .admin-card { padding: 20px; }
+    .acoes-rapidas { padding: 20px; }
+    .acoes-grid a { padding: 16px; }
+}

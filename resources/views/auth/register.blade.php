@@ -90,10 +90,16 @@
                     <label for="telefone">Telefone:</label>
 
                     <input
-                        type="text"
+                        type="tel"
                         name="telefone"
                         id="telefone"
                         value="{{ old('telefone') }}"
+                        inputmode="numeric"
+                        pattern="[0-9]{10,11}"
+                        minlength="10"
+                        maxlength="11"
+                        title="Digite um telefone com 10 ou 11 números, sem espaços ou caracteres especiais."
+                        autocomplete="tel"
                         required
                     >
 
@@ -120,6 +126,8 @@
                             type="button"
                             class="mostrar-senha"
                             id="mostrarSenhaCadastro"
+                            aria-label="Mostrar senha"
+                            aria-pressed="false"
                         >
                             <i class="fa-regular fa-eye"></i>
                         </button>
@@ -159,6 +167,6 @@
 
 </body>
 
-</html>
+<script src="{{ asset('jss/register.js') }}"></script>
 
-<script src="{{ asset('jss/login.js') }}"></script>
+</html>

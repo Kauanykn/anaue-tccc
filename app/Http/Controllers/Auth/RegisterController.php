@@ -20,7 +20,7 @@ class RegisterController extends Controller
         $dados = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'unique:users,email'],
-            'telefone' => ['required', 'string', 'max:20'],
+            'telefone' => ['required', 'regex:/^\\d{10,11}$/', 'unique:users,telefone'],
             'password' => ['required', 'min:8'],
         ], [
             'name.required' => 'Digite seu nome.',
@@ -30,8 +30,7 @@ class RegisterController extends Controller
             'email.unique' => 'Esse email já está cadastrado.',
 
             'telefone.required' => 'Digite seu telefone.',
-            'telefone.min' => 'Digite um telefone válido.',
-            'telefone.max' => 'Digite um telefone válido.',
+            'telefone.regex' => 'Digite um telefone válido, com 10 ou 11 números.',
             'telefone.unique' => 'Esse telefone já está cadastrado.',
             
             'password.required' => 'Digite uma senha.',
