@@ -9,10 +9,12 @@
                 uma proposta, sem compromisso.
             </p>
 
-            <button type="button" class="cta-orcamento__botao">
-                Solicitar orçamento
-                <span>→</span>
-            </button>
+        
+                <a href="{{ url('/orcamento') }}" class="cta-orcamento__botao">
+                        Solicitar orçamento
+                        <span>→</span>
+                    </a>
+            
         </div>
 
         <div class="cta-orcamento__imagem">

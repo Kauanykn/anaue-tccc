@@ -10,6 +10,8 @@ use App\Http\Controllers\PacoteController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate;
+use App\Http\Controllers\OrcamentoController;
+use App\Http\Controllers\Admin\OrcamentoController as AdminOrcamentoController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
@@ -27,7 +29,10 @@ Route::put('/depoimentos/{depoimento}', [DepoimentoController::class, 'update'])
 Route::delete('/depoimentos/{depoimento}', [DepoimentoController::class, 'destroy'])->middleware('auth')->name('depoimentos.destroy');
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function  () {
+Route::get('/orcamentos', [AdminOrcamentoController::class, 'index'])->name('orcamentos.index');
+
 Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
+
 Route::resource('pacotes', AdminPacoteController::class)->except(['show']);});
 
 Route::get('/login', [LoginController::class, 'show'])->name('login');
@@ -48,6 +53,6 @@ Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])->name('pacote
 
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth', 'role:admin'])->name('admin.dashboard');
 
- Route::get('/orcamento', function () {
- return view('orcamento.index');
- })->name('orcamento');
+ Route::get('/orcamento', [OrcamentoController::class, 'create']) ->name('orcamento');
+
+Route::post('/orcamento', [OrcamentoController::class, 'store'])->name('orcamento.store');

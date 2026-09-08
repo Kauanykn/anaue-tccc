@@ -65,6 +65,15 @@
                 Galeria
             </a>
 
+            <a
+             href="{{ route('admin.orcamentos.index') }}"
+             class="admin-link"
+                >
+                
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+             Orçamentos
+            </a>
+
         </nav>
 
 
