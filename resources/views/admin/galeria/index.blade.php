@@ -13,7 +13,7 @@
         <div class="gerenciar-galeria__cabecalho">
 
             <div>
-                <span>Administração</span>
+                <span class="depoimentos-label">— PAINEL ADMINISTRATIVO</span>
 
                 <h1>Gerenciar galeria</h1>
 

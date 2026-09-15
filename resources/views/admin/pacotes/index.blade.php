@@ -15,7 +15,7 @@
         <div class="admin-pacote__topo">
 
             <div>
-                <span>PAINEL ADMINISTRATIVO</span>
+                <span class="depoimentos-label">— PAINEL ADMINISTRATIVO</span>
 
                 <h1>Pacotes</h1>
 

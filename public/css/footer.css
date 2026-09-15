@@ -1,9 +1,11 @@
-.footer{
+/* =========================
+   FOOTER
+========================= */
 
+.footer {
+    padding: 60px 30px 25px;
 
-    padding:60px 30px 25px;
-
-    background:linear-gradient(
+    background: linear-gradient(
         90deg,
         #d67aa8 0%,
         #bfa8ca 30%,
@@ -11,144 +13,163 @@
         #d8cb7d 100%
     );
 
-    color:#f3f3f3;
+    color: #f3f3f3;
+}
+
+.footer__container {
+    max-width: 1120px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+}
+
+.footer h3 {
+    margin-bottom: 18px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.footer p {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.footer__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.footer__item i {
+    margin-top: 4px;
+    color: #ffffff;
+}
+
+.footer__item span {
+    color: #ffffff;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.footer__social span {
+    display: block;
+    margin-top: 8px;
+
+    color: #ffffff;
+
+    line-height: 1.6;
+}
+
+.footer__redes {
+    margin-top: 20px;
+}
+
+.footer__redes a {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #69d6e5;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 22px;
+
+    transition: .3s;
+}
+
+.footer__redes a:hover {
+    transform: translateY(-5px);
+    background: #f30b78;
+}
+
+.footer__linha {
+    max-width: 650px;
+    margin: 50px auto 20px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, .4);
+}
+
+.footer__copy {
+    text-align: center;
+}
+
+.footer__copy p {
+    margin-bottom: 8px;
+}
+
+.footer__copy span {
+    color: #ffffff;
+
+    font-size: 15px;
+    opacity: .9;
+}
+
+
+/* =========================
+   TEMA ESCURO
+========================= */
+
+body.tema-escuro .footer {
+    background: linear-gradient(
+        90deg,
+        #713653 0%,
+        #594c61 30%,
+        #38686d 70%,
+        #696332 100%
+    );
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .footer__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
 
 }
 
-.footer__container{
-
-    max-width:1120px;
-
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-
-    gap:70px;
-
-}
-
-.footer h3{
-
-    margin-bottom:18px;
-
-    font-size:34px;
-    font-weight:700;
-
-}
-
-.footer p{
-
-    margin-bottom:10px;
-
-    font-size:17px;
-
-    line-height:1.6;
-
-}
-
-.footer__item{
-
-    display:flex;
-    align-items:flex-start;
-
-    gap:12px;
-
-    margin-bottom:18px;
-
-}
-
-.footer__item i{
-
-    margin-top:4px;
-
-    color:#fff;
-
-}
-
-.footer__item span{
-
-    font-size:17px;
-
-    line-height:1.6;
-
-}
-
-.footer__social span{
-
-    display:block;
-
-    margin-top:8px;
-
-    line-height:1.6;
-
-}
-
-.footer__redes{
-
-    margin-top:20px;
-
-}
-
-.footer__redes a{
-
-    width:48px;
-    height:48px;
-
-    border-radius:50%;
-
-    background:#69d6e5;
-
-    color:#fff;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-decoration:none;
-
-    font-size:22px;
-
-    transition:.3s;
-
-}
-
-.footer__redes a:hover{
-
-    transform:translateY(-5px);
-
-    background:#f30b78;
-
-}
-
-.footer__linha{
-
-    max-width:650px;
-
-    margin:50px auto 20px;
-
-    height:1px;
-
-    background:rgba(255,255,255,.4);
-
-}
-
-.footer__copy{
-
-    text-align:center;
-
-}
-
-.footer__copy p{
-
-    margin-bottom:8px;
-
-}
-
-.footer__copy span{
-
-    font-size:15px;
-
-    opacity:.9;
+@media (max-width: 650px) {
+
+    .footer {
+        padding: 45px 20px 25px;
+    }
+
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer h3 {
+        font-size: 30px;
+    }
+
+    .footer p,
+    .footer__item span {
+        font-size: 16px;
+    }
 
 }

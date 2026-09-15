@@ -72,6 +72,12 @@
                 
             <i class="fa-solid fa-file-invoice-dollar"></i>
              Orçamentos
+                <a
+                href="{{ route('admin.depoimentos.index') }}"
+                class="admin-link"
+            >
+                <i class="fa-solid fa-star"></i>
+                Avaliações
             </a>
 
         </nav>
@@ -161,16 +167,50 @@
 
             </a>
 
+            <a href="{{ route('admin.depoimentos.index') }}" class="admin-card-depoimentos">
+            <section class="admin-depoimentos-resumo">
+    
+        <div class="admin-depoimentos-info">
+    
+            <div class="admin-depoimentos-icone">
+                <i class="fa-solid fa-star"></i>
+            </div>
+    
+            <div>
+                <span>Avaliações dos clientes</span>
+    
+                <div class="admin-depoimentos-media">
+                    <strong>
+                        {{ number_format($mediaAvaliacoes, 1, ',', '') }}
+                    </strong>
+    
+                    <span class="admin-depoimentos-estrelas">
+                        ★★★★★
+                    </span>
+                </div>
+                
+                <small>
+                    {{ $totalDepoimentos }}
+                    {{ $totalDepoimentos == 1 ? 'depoimento cadastrado' : 'depoimentos cadastrados' }}
+                </small>
+            </div>
+            
+        </div>
+        
+        
+    </section>
+</a>
         </section>
 
 
-        <section class="acoes-rapidas">
 
-            <h2>Ações rápidas</h2>
+<section class="acoes-rapidas">
+    
+    <h2>Ações rápidas</h2>
 
-            <div class="acoes-grid">
-
-                <a href="{{ route('admin.pacotes.create') }}">
+    <div class="acoes-grid">
+        
+        <a href="{{ route('admin.pacotes.create') }}">
                     <i class="fa-solid fa-plus"></i>
 
                     <div>
@@ -178,15 +218,23 @@
                         <span>Cadastrar um novo pacote</span>
                     </div>
                 </a>
-
-
+                
+                
                 <a href="{{ route('admin.galeria.create') }}">
                     <i class="fa-solid fa-image"></i>
-
+                    
                     <div>
                         <strong>Adicionar foto</strong>
                         <span>Adicionar uma foto à galeria</span>
                     </div>
+                </a>
+                
+                <a
+                    href="{{ route('admin.depoimentos.index') }}"
+                    class="btn-administrar-depoimentos"
+                >
+                    <i class="fa-solid fa-star"></i>
+                    Administrar avaliações
                 </a>
 
             </div>
