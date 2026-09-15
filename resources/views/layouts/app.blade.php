@@ -35,5 +35,6 @@
          @include('components.footer')
     </footer>
 
+    <script src="{{ asset('jss/navbar.js') }}"></script>
 </body>
 </html>

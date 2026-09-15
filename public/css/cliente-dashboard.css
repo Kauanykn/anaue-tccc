@@ -336,6 +336,35 @@ body {
     }
 
 }
+
+@media (max-width: 600px) {
+    .dashboard { display: block; }
+
+    .sidebar {
+        width: 100%;
+        min-height: 64px;
+        padding: 10px 14px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .sidebar__logo { margin: 0; }
+    .sidebar__logo img { width: 48px; }
+    .sidebar__menu { flex: 1; flex-direction: row; gap: 4px; }
+    .sidebar__link { width: 42px; justify-content: center; padding: 11px; }
+    .sidebar__link span { display: none; }
+    .btn-logout { width: 42px; margin-left: auto; justify-content: center; padding: 11px; }
+    .btn-logout span { display: none; }
+    .dashboard__conteudo { padding: 26px 18px; }
+    .btn-voltar-home { width: 100%; justify-content: center; }
+    .perfil-cliente { align-items: flex-start; flex-direction: column; }
+    .perfil-info { align-items: flex-start; }
+    .avatar-acoes { flex-wrap: wrap; }
+    .escolher-arquivo, .alterar-foto, .remover-foto { flex: 1 1 145px; }
+    .evento-destaque { padding: 22px 20px; }
+    .evento-destaque h2 { font-size: 22px; }
+}
 .btn-voltar-home {
     display: inline-flex;
     align-items: center;
@@ -442,4 +471,24 @@ body {
 
 .btn-logout:hover {
     background-color: #f20b78;
+}
+
+@media (max-width: 600px) {
+    .dashboard { display: block; }
+    .sidebar { width: 100%; min-height: 64px; padding: 10px 14px; flex-direction: row; align-items: center; gap: 12px; }
+    .sidebar__logo { margin: 0; }
+    .sidebar__logo img { width: 48px; }
+    .sidebar__menu { flex: 1; flex-direction: row; gap: 4px; }
+    .sidebar__link { width: 42px; justify-content: center; padding: 11px; }
+    .sidebar__link span { display: none; }
+    .btn-logout { width: 42px; margin-left: auto; justify-content: center; padding: 11px; }
+    .btn-logout span { display: none; }
+    .dashboard__conteudo { padding: 26px 18px; }
+    .btn-voltar-home { width: 100%; justify-content: center; }
+    .perfil-cliente { align-items: flex-start; flex-direction: column; }
+    .perfil-info { align-items: flex-start; }
+    .avatar-acoes { flex-wrap: wrap; }
+    .escolher-arquivo, .alterar-foto, .remover-foto { flex: 1 1 145px; }
+    .evento-destaque { padding: 22px 20px; }
+    .evento-destaque h2 { font-size: 22px; }
 }

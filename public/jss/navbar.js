@@ -1,33 +1,23 @@
-const botaoTema = document.getElementById('botao-tema');
+document.addEventListener('DOMContentLoaded', () => {
+    const botao = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.nav-menu');
 
-    function atualizarIconeTema() {
-        const icone = botaoTema.querySelector('i');
+    if (!botao || !menu) return;
 
-        if (document.body.classList.contains('tema-escuro')) {
-            icone.className = 'fa-solid fa-sun';
-        } else {
-            icone.className = 'fa-solid fa-moon';
-        }
-    }
+    botao.addEventListener('click', () => {
+        const aberto = menu.classList.toggle('aberto');
+        const icone = botao.querySelector('i');
 
-    // Carrega o tema salvo
-    const temaSalvo = localStorage.getItem('tema');
-
-    if (temaSalvo === 'escuro') {
-        document.body.classList.add('tema-escuro');
-    }
-
-    atualizarIconeTema();
-
-    // Alterna o tema
-    botaoTema.addEventListener('click', function () {
-        document.body.classList.toggle('tema-escuro');
-
-        if (document.body.classList.contains('tema-escuro')) {
-            localStorage.setItem('tema', 'escuro');
-        } else {
-            localStorage.setItem('tema', 'claro');
-        }
-
-        atualizarIconeTema();
+        botao.setAttribute('aria-expanded', String(aberto));
+        botao.setAttribute('aria-label', aberto ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+        icone?.classList.toggle('fa-bars', !aberto);
+        icone?.classList.toggle('fa-xmark', aberto);
     });
+
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        menu.classList.remove('aberto');
+        botao.setAttribute('aria-expanded', 'false');
+        botao.setAttribute('aria-label', 'Abrir menu de navegação');
+        botao.querySelector('i')?.classList.replace('fa-xmark', 'fa-bars');
+    }));
+});
