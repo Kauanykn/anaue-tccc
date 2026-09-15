@@ -313,47 +313,6 @@
     z-index: 10;
 }
 
-
-
-/* Estatísticas */
-
-.hero__estatisticas {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 100px;
-    border-top: 1px solid #d8d8d8;
-    border-bottom: 1px solid #d8d8d8;
-}
-
-.estatistica {
-    min-height: 95px;
-    padding: 18px 10px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-}
-
-.estatistica:not(:last-child) {
-    border-right: 1px solid #d8d8d8;
-}
-
-.estatistica strong {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    line-height: 1;
-    color: #111;
-}
-
-.estatistica span {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #555;
-}
-
 /* Celular */
 
 @media (max-width: 650px) {
@@ -437,7 +396,55 @@
     }
 }
 
+/* ====== SOBRE ============= */
 
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 60px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sobre-imagem img {
+    width: 420px;
+    height: 680px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.sobre-content h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--preto);
+    font-family: 'Playfair Display';
+}
+
+.sobre-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--cinza);
+    margin-bottom: 12px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-sobre {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: 2px solid var(--preto);
+    border-radius: 24px;
+    color: var(--preto);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-sobre:hover {
+    background: var(--preto);
+    color: var(--fundo);
+}
 
 @media (max-width: 800px) {
     .sobre { gap: 32px; padding: 48px 28px; }

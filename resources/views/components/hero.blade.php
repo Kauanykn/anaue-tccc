@@ -54,30 +54,6 @@
 
         </div>
 
-        <div class="hero__estatisticas">
-
-            <div class="estatistica">
-                <strong>12 anos</strong>
-                <span>de festas</span>
-            </div>
-
-            <div class="estatistica">
-                <strong>+800</strong>
-                <span>eventos realizados</span>
-            </div>
-
-            <div class="estatistica">
-                <strong>4.9/5</strong>
-                <span>avaliação média</span>
-            </div>
-
-            <div class="estatistica">
-                <strong>4</strong>
-                <span>pacotes disponíveis</span>
-            </div>
-
-        </div>
-
     </div>
 </section>
 
