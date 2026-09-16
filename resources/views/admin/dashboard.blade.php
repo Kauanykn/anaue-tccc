@@ -68,7 +68,7 @@
             <a
              href="{{ route('admin.orcamentos.index') }}"
              class="admin-link"
-                >
+            >
                 
             <i class="fa-solid fa-file-invoice-dollar"></i>
              Orçamentos
@@ -79,6 +79,7 @@
                 <i class="fa-solid fa-star"></i>
                 Avaliações
             </a>
+    
 
         </nav>
 
@@ -199,7 +200,7 @@
         
         
     </section>
-</a>
+    </a>
         </section>
 
 
