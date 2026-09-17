@@ -54,7 +54,7 @@
                 <span>Visão Geral</span>
             </a>
 
-            <a href="#" class="sidebar__link">
+            <a href="{{ route('orcamento') }}" class="sidebar__link">
                 <i class="fa-regular fa-file-lines"></i>
                 <span>Orçamentos</span>
             </a>
