@@ -1,4 +1,9 @@
-<?php
+<?php                   //NUNCA DAR MERGE NAS ROTAS SOZINHO, SEMPRE CHAMAR EU "LUCI" E JESUS PARA 
+                        // ACOMPANHAR O QUE FOI FEITO, SE DER MERGE SOZINHO, VAI DAR TODOS OS CONFLITOS
+                        //  POSSIVEIS DESSE UNIVERSO E EU VOU TER QUE TE DESVIVER
+
+                        //Obs: A partir de agora, toda alteração de rota tem que ser comentada aqui.
+
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\DepoimentoController;
@@ -13,51 +18,134 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\Admin\OrcamentoController as AdminOrcamentoController;
+use App\Http\Controllers\Desenvolvedor\DesenvolvedorDashboardController;
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function  () {
-        Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
-        Route::resource('pacotes', AdminPacoteController::class)->except(['show']);
-        Route::resource('depoimentos', AdminDepoimentoController::class)->except(['show']);
-        });
 
-Route::get('/', [LandingController::class, 'index'])->name('home');
+// Area admin
+Route::prefix('admin')
+    ->name('admin.')
+    ->middleware(['auth', 'role:admin,desenvolvedor'])
+    ->group(function () {
 
-Route::get('/sobre', [LandingController::class, 'sobre'])->name('sobre');
+        Route::resource('galeria', GaleriaController::class)
+            ->parameters(['galeria' => 'galeria'])
+            ->except(['show']);
 
-Route::get('/galeria', [LandingController::class, 'galeria'])->name('galeria');
+        Route::resource('pacotes', AdminPacoteController::class)
+            ->except(['show']);
 
-Route::get('/depoimentos', [DepoimentoController::class, 'depoimentos'])->name('depoimentos');
-Route::post('/depoimentos', [DepoimentoController::class, 'store'])->name('depoimentos.store');
-Route::put('/depoimentos/{depoimento}', [DepoimentoController::class, 'update'])->middleware(Authenticate::class)->name('depoimentos.update');
-Route::delete('/depoimentos/{depoimento}', [DepoimentoController::class, 'destroy'])->middleware('auth')->name('depoimento.destroy');
+        Route::resource('depoimentos', AdminDepoimentoController::class)
+            ->except(['show']);
 
-Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->group(function  () {
-Route::get('/orcamentos', [AdminOrcamentoController::class, 'index'])->name('orcamentos.index');
+        Route::get('/orcamentos', [
+            AdminOrcamentoController::class,
+            'index'
+        ])->name('orcamentos.index');
+    });
 
-Route::resource('galeria', GaleriaController::class)->parameters(['galeria' => 'galeria'])->except(['show']);
 
-Route::resource('pacotes', AdminPacoteController::class)->except(['show']);});
+// Area publica
+Route::get('/', [LandingController::class, 'index'])
+    ->name('home');
 
-Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::get('/sobre', [LandingController::class, 'sobre'])
+    ->name('sobre');
 
-Route::post('/login', [LoginController::class, 'login'])->name('login.authenticate');
+Route::get('/galeria', [LandingController::class, 'galeria'])
+    ->name('galeria');
 
-Route::get('/cadastro', [RegisterController::class, 'show'])->name('register');
+Route::get('/depoimentos', [DepoimentoController::class, 'depoimentos'])
+    ->name('depoimentos');
 
-Route::post('/cadastro', [RegisterController::class, 'register'])->name('register.store');
+Route::post('/depoimentos', [DepoimentoController::class, 'store'])
+    ->name('depoimentos.store');
 
-Route::view('/cliente/dashboard', 'cliente.dashboard')->middleware('auth')->name('cliente.dashboard');
-Route::post('/cliente/avatar', [ClienteController::class, 'atualizarAvatar'])->middleware('auth')->name('cliente.avatar');
-Route::delete('/cliente/avatar', [ClienteController::class, 'removerAvatar'])->middleware('auth')->name('cliente.avatar.remover');
+Route::put('/depoimentos/{depoimento}', [
+    DepoimentoController::class,
+    'update'
+])
+    ->middleware(Authenticate::class)
+    ->name('depoimentos.update');
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::delete('/depoimentos/{depoimento}', [
+    DepoimentoController::class,
+    'destroy'
+])
+    ->middleware('auth')
+    ->name('depoimento.destroy');
 
-Route::get('/pacotes', [PacoteController::class, 'index'])->name('pacotes');
 
-Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])->name('pacotes.show');
+// Login/cadastro
+Route::get('/login', [LoginController::class, 'show'])
+    ->name('login');
 
-Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->middleware(['auth', 'role:admin'])->name('admin.dashboard');
+Route::post('/login', [LoginController::class, 'login'])
+    ->name('login.authenticate');
 
- Route::get('/orcamento', [OrcamentoController::class, 'create']) ->name('orcamento');
+Route::get('/cadastro', [RegisterController::class, 'show'])
+    ->name('register');
 
-Route::post('/orcamento', [OrcamentoController::class, 'store'])->name('orcamento.store');
+Route::post('/cadastro', [RegisterController::class, 'register'])
+    ->name('register.store');
+
+Route::post('/logout', [LoginController::class, 'logout'])
+    ->name('logout');
+
+
+// Area user
+Route::view('/cliente/dashboard', 'cliente.dashboard')
+    ->middleware('auth')
+    ->name('cliente.dashboard');
+
+Route::post('/cliente/avatar', [
+    ClienteController::class,
+    'atualizarAvatar'
+])
+    ->middleware('auth')
+    ->name('cliente.avatar');
+
+Route::delete('/cliente/avatar', [
+    ClienteController::class,
+    'removerAvatar'
+])
+    ->middleware('auth')
+    ->name('cliente.avatar.remover');
+
+
+// Pacotes
+Route::get('/pacotes', [PacoteController::class, 'index'])
+    ->name('pacotes');
+
+Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])
+    ->name('pacotes.show');
+
+
+// Dashboard admin
+Route::get('/admin/dashboard', [
+    AdminDashboardController::class,
+    'index'
+])
+    ->middleware(['auth', 'role:admin'])
+    ->name('admin.dashboard');
+
+
+// Orcamento
+Route::get('/orcamento', [OrcamentoController::class, 'create'])
+    ->name('orcamento');
+
+Route::post('/orcamento', [OrcamentoController::class, 'store'])
+    ->name('orcamento.store');
+
+
+// Area dev
+Route::prefix('desenvolvedor')
+    ->name('desenvolvedor.')
+    ->middleware(['auth', 'role:desenvolvedor'])
+    ->group(function () {
+
+        Route::get('/dashboard', [
+            DesenvolvedorDashboardController::class,
+            'index'
+        ])->name('dashboard');
+
+    });

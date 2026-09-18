@@ -13,16 +13,23 @@ class RoleMiddleware
         Request $request,
         Closure $next,
         ...$roles
-    ): Response
-    {
+    ): Response {
         if (!Auth::check()) {
             return redirect()->route('login');
         }
 
-        if (!in_array(Auth::user()->role, $roles)) {
-            abort(403);
+        $user = Auth::user();
+
+        foreach ($roles as $role) {
+            if (
+                ($role === 'admin' && $user->isAdmin()) ||
+                ($role === 'desenvolvedor' && $user->isDesenvolvedor()) ||
+                ($role === 'usuario' && $user->isUsuario())
+            ) {
+                return $next($request);
+            }
         }
 
-        return $next($request);
+        abort(403);
     }
 }
