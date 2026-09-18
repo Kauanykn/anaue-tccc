@@ -1,26 +1,21 @@
 <?php
+        // Existe uma função amaldiçoada chamada MERGE. Ela junta 2 branches,                //A partir de agora, toda vez que alterar  
+        // e se vc der merge quando tem alteração de rota sem saber oq foi                  //ou criar uma rota, coloca um comentário
+        // alterado, SEMPRE dá merda.                                                      //explicando por favor.
+        
+        // Então, pelo amor de Deus, NÃO dar merge nas rotas sem saber exatamente
+        // oq foi alterado. Não é só clicar em "merge" e torcer pra funcionar.
+        // Vai cagar middleware, permissões, nomes de rotas e fazer o site
+        // inteiro começar a dar erro.
+        
+        // OBS:
+        // Só dar merge nessa parte se estiver comigo e com Jesus do lado,
+        // com uma Bíblia debaixo do braço e rezando o Pai Nosso,
+        // pq se der merda aqui, vai ser um saco ajeitar e vou te desviver.
+        
+        // Menos foco, mais ansiedade.
+        // Agradeço a atenção. - Luci
 
-// Existe uma função amaldiçoada chamada MERGE. Ela junta 2 branches,
-// e quando vc da merge quando tem alteração de rota sem saber oq foi
-// alterado, SEMPRE dá merda.
-//
-// Então, pelo amor de Deus, NÃO dar merge nas rotas sem saber exatamente
-// oq foi alterado. Não é só clicar em "merge" e torcer pra funcionar.
-// Vai cagar middleware, permissões, nomes de rotas e fazer o site
-// inteiro começar a dar erro.
-//
-// OBS:
-//
-// Só dar merge nessa parte se estiver comigo e com Jesus do lado,
-// com uma Bíblia debaixo do braço e rezando o Pai Nosso,
-// pq se der merda aqui, vai dar MUITA merda e eu vou te desviver.
-//
-// Menos foco, mais ansiedade.
-//
-// Agradeço a atenção. - Luci
-
-// A partir de agora, toda vez que alterar ou criar uma rota,
-// coloca um comentário explicando oq foi alterado/criado, por favor.
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DepoimentoController as AdminDepoimentoController;
