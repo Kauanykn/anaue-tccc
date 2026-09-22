@@ -1,97 +1,117 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/admin-orcamentos.css') }}">
 
-<section style="max-width: 1200px; margin: 50px auto; padding: 0 20px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 30px;">
+<section class="orcamentos-admin">
+    <header class="orcamentos-admin__cabecalho">
         <div>
-            <span>PAINEL ADMINISTRATIVO</span>
+            <span class="orcamentos-admin__eyebrow">PAINEL ADMINISTRATIVO</span>
             <h1>Pedidos de orçamento</h1>
-            <p>Veja as solicitações enviadas pelos clientes.</p>
+            <p>Analise os pedidos e informe a decisão ao cliente.</p>
         </div>
 
-        <a
-            href="{{ route('admin.dashboard') }}"
-            style="padding: 10px 16px; background: #eee; border-radius: 8px; text-decoration: none; color: #222;"
-        >
+        <a href="{{ route('admin.dashboard') }}" class="btn-voltar">
+            <i class="fa-solid fa-arrow-left"></i>
             Voltar ao painel
         </a>
-    </div>
+    </header>
+
+    @if (session('success'))
+        <div class="alerta-sucesso">{{ session('success') }}</div>
+    @endif
 
     @if ($orcamentos->isEmpty())
-        <div style="padding: 30px; text-align: center; background: #f7f7f7; border-radius: 12px;">
+        <div class="orcamentos-vazio">
+            <i class="fa-regular fa-file-lines"></i>
             <h2>Nenhum orçamento recebido ainda.</h2>
-            <p>Quando um cliente preencher o formulário, ele aparecerá aqui.</p>
+            <p>As solicitações dos clientes aparecerão aqui.</p>
         </div>
     @else
-        <div style="overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; background: white;">
-                <thead>
-                    <tr style="background: #f1f1f1;">
-                        <th style="padding: 12px; text-align: left;">Cliente</th>
-                        <th style="padding: 12px; text-align: left;">Aniversariante</th>
-                        <th style="padding: 12px; text-align: left;">Contato</th>
-                        <th style="padding: 12px; text-align: left;">Evento</th>
-                        <th style="padding: 12px; text-align: left;">Convidados</th>
-                        <th style="padding: 12px; text-align: left;">Pacote e observações</th>
-                        <th style="padding: 12px; text-align: left;">Status</th>
-                        <th style="padding: 12px; text-align: left;">Enviado em</th>
-                    </tr>
-                </thead>
+        <div class="orcamentos-lista">
+            @foreach ($orcamentos as $orcamento)
+                <article class="orcamento-card">
+                    <div class="orcamento-card__topo">
+                        <div>
+                            <span class="orcamento-card__codigo">
+                                PEDIDO #{{ str_pad($orcamento->id, 4, '0', STR_PAD_LEFT) }}
+                            </span>
+                            <h2>{{ $orcamento->nome }}</h2>
+                        </div>
 
-                <tbody>
-                    @foreach ($orcamentos as $orcamento)
-                        <tr style="border-bottom: 1px solid #e5e5e5;">
-                            <td style="padding: 12px;">
-                                <strong>{{ $orcamento->nome }}</strong>
-                            </td>
+                        <span class="status status--{{ $orcamento->status }}">
+                            {{ ucfirst($orcamento->status) }}
+                        </span>
+                    </div>
 
-                            <td style="padding: 12px;">
-                                {{ $orcamento->aniversariante ?? 'Não informado' }}
-                                @if ($orcamento->idade)
-                                    <br><small>{{ $orcamento->idade }}</small>
-                                @endif
-                            </td>
+                    <div class="orcamento-card__dados">
+                        <div>
+                            <small>ANIVERSARIANTE</small>
+                            <strong>{{ $orcamento->aniversariante ?? 'Não informado' }}</strong>
+                            @if ($orcamento->idade)
+                                <span>{{ $orcamento->idade }}</span>
+                            @endif
+                        </div>
 
-                            <td style="padding: 12px;">
-                                {{ $orcamento->telefone }}
+                        <div>
+                            <small>DATA DO EVENTO</small>
+                            <strong>
+                                {{ $orcamento->data_evento?->format('d/m/Y') ?? 'Não informada' }}
+                            </strong>
+                        </div>
 
-                                @if ($orcamento->email)
-                                    <br>
-                                    <small>{{ $orcamento->email }}</small>
-                                @endif
-                            </td>
+                        <div>
+                            <small>CONVIDADOS</small>
+                            <strong>{{ $orcamento->quantidade_convidados ?? 'Não informado' }}</strong>
+                        </div>
 
-                            <td style="padding: 12px;">
-                                @if ($orcamento->data_evento)
-                                    {{ $orcamento->data_evento->format('d/m/Y') }}
-                                @else
-                                    Não informada
-                                @endif
-                            </td>
+                        <div>
+                            <small>PACOTE</small>
+                            <strong>{{ $orcamento->pacote ?? 'Não informado' }}</strong>
+                        </div>
+                    </div>
 
-                            <td style="padding: 12px;">
-                                {{ $orcamento->quantidade_convidados ?? 'Não informado' }}
-                            </td>
+                    <div class="orcamento-card__contato">
+                        <span><i class="fa-solid fa-phone"></i> {{ $orcamento->telefone }}</span>
+                        @if ($orcamento->email)
+                            <span><i class="fa-solid fa-envelope"></i> {{ $orcamento->email }}</span>
+                        @endif
+                        <span><i class="fa-regular fa-clock"></i> {{ $orcamento->created_at->format('d/m/Y \à\s H:i') }}</span>
+                    </div>
 
-                            <td style="padding: 12px;">
-                                {{ $orcamento->pacote ?? 'Não informado' }}
-                                @if ($orcamento->observacoes)
-                                    <br><small>{{ $orcamento->observacoes }}</small>
-                                @endif
-                            </td>
+                    @if ($orcamento->observacoes)
+                        <div class="orcamento-card__observacoes">
+                            <strong>Observações</strong>
+                            <p>{{ $orcamento->observacoes }}</p>
+                        </div>
+                    @endif
 
-                            <td style="padding: 12px;">
-                                {{ ucfirst($orcamento->status) }}
-                            </td>
+                    @if ($orcamento->status === 'pendente')
+                        <form
+                            action="{{ route('admin.orcamentos.status', $orcamento) }}"
+                            method="POST"
+                            class="orcamento-card__acoes"
+                        >
+                            @csrf
+                            @method('PATCH')
 
-                            <td style="padding: 12px;">
-                                {{ $orcamento->created_at->format('d/m/Y H:i') }}
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                            <button type="submit" name="status" value="aprovado" class="btn-status btn-status--aprovar">
+                                <i class="fa-solid fa-check"></i>
+                                Aprovar orçamento
+                            </button>
+
+                            <button type="submit" name="status" value="recusado" class="btn-status btn-status--recusar">
+                                <i class="fa-solid fa-xmark"></i>
+                                Recusar
+                            </button>
+                        </form>
+                    @else
+                        <p class="orcamento-card__finalizado">
+                            Este orçamento já foi {{ $orcamento->status }}.
+                        </p>
+                    @endif
+                </article>
+            @endforeach
         </div>
     @endif
 </section>

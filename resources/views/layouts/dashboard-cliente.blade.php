@@ -48,13 +48,16 @@
 
             <a
                 href="{{ route('cliente.dashboard') }}"
-                class="sidebar__link ativo"
+                @class(['sidebar__link', 'ativo' => request()->routeIs('cliente.dashboard')])
             >
                 <i class="fa-solid fa-house"></i>
                 <span>Visão Geral</span>
             </a>
 
-            <a href="{{ route('orcamento') }}" class="sidebar__link">
+            <a
+                href="{{ route('cliente.orcamentos') }}"
+                @class(['sidebar__link', 'ativo' => request()->routeIs('cliente.orcamentos')])
+            >
                 <i class="fa-regular fa-file-lines"></i>
                 <span>Orçamentos</span>
             </a>

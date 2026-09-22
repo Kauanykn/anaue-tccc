@@ -50,7 +50,11 @@ class OrcamentoController extends Controller
                 ->withErrors(['data_evento' => 'Esta data já possui uma solicitação. Escolha outra data.']);
         }
 
-        Orcamento::create($dadosValidados);
+        Orcamento::create([
+         ...$dadosValidados,
+        'user_id' => auth()->id(),
+        'status' => 'pendente',
+    ]);
 
         return redirect()
             ->route('orcamento')

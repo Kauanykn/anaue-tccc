@@ -100,20 +100,49 @@
 
 </div>
 
-<section class="evento-destaque">
+@if ($orcamento)
+    <section class="evento-destaque evento-destaque--{{ $orcamento->status }}">
+        <div class="evento-destaque__topo">
+            <span>STATUS DO ORÇAMENTO</span>
+            <strong class="status-cliente status-cliente--{{ $orcamento->status }}">
+                {{ ucfirst($orcamento->status) }}
+            </strong>
+        </div>
 
-    <span>SEU EVENTO</span>
+        <h2>
+            {{ $orcamento->aniversariante
+                ? 'Festa de ' . $orcamento->aniversariante
+                : 'Seu orçamento' }}
+        </h2>
 
-    <h2>
-        Aniversário da Alice - 5 anos
-    </h2>
+        <p>
+            {{ $orcamento->data_evento?->format('d \d\e F \d\e Y') }}
+            @if ($orcamento->pacote)
+                • {{ $orcamento->pacote }}
+            @endif
+        </p>
 
-    <p>
-        14 de setembro de 2026 • Salão Jardim Verde • Pacote Coquetel
-    </p>
-
-
-</section>
+        @if ($orcamento->status === 'pendente')
+            <p class="evento-destaque__mensagem">
+                Recebemos sua solicitação e nossa equipe está analisando os detalhes.
+            </p>
+        @elseif ($orcamento->status === 'aprovado')
+            <p class="evento-destaque__mensagem">
+                Seu orçamento foi aprovado! Em breve entraremos em contato para os próximos passos.
+            </p>
+        @else
+            <p class="evento-destaque__mensagem">
+                Não conseguimos aprovar este orçamento. Fale conosco para verificar outras possibilidades.
+            </p>
+        @endif
+    </section>
+@else
+    <section class="evento-destaque">
+        <span>SEU EVENTO</span>
+        <h2>Você ainda não possui um orçamento</h2>
+        <p>Solicite um orçamento para acompanhar a análise por aqui.</p>
+    </section>
+@endif
 
 
 @endsection

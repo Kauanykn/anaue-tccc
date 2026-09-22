@@ -7,6 +7,9 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Orcamento;
+use App\Models\ChatMessage;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -47,5 +50,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function orcamentos()
+    {
+    return $this->hasMany(Orcamento::class);
+    }
+
+    public function chatMessages(): HasMany
+    {
+    return $this->hasMany(ChatMessage::class);
     }
 }

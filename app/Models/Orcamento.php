@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Orcamento extends Model
 {
     protected $fillable = [
+        'user_id',
         'nome',
         'telefone',
         'email',
@@ -23,5 +24,10 @@ class Orcamento extends Model
     protected $casts = [
         'data_evento' => 'date',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

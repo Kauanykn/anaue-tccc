@@ -31,6 +31,7 @@ use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\PacoteController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatController;// importando o ChatController do chat de ia
 
 
 // Area admin
@@ -43,6 +44,11 @@ Route::prefix('admin')
             AdminOrcamentoController::class,
             'index'
         ])->name('orcamentos.index');
+
+        Route::patch('/orcamentos/{orcamento}/status', [
+        AdminOrcamentoController::class,
+        'atualizarStatus'
+        ])->name('orcamentos.status'); // rota para atualizar o status do orçamento
 
         Route::resource('galeria', GaleriaController::class)
             ->parameters(['galeria' => 'galeria'])
@@ -65,9 +71,14 @@ Route::get('/sobre', [LandingController::class, 'sobre'])
 
 
 // Area user
-Route::view('/cliente/dashboard', 'cliente.dashboard')
+Route::get('/cliente/dashboard', [ClienteController::class, 'dashboard'])
     ->middleware('auth')
-    ->name('cliente.dashboard');
+    ->name('cliente.dashboard'); // rota para o dashboard do cliente funciosnalll
+
+// Lista os orçamentos solicitados exclusivamente pelo cliente autenticado.
+Route::get('/cliente/orcamentos', [ClienteController::class, 'orcamentos'])
+    ->middleware('auth')
+    ->name('cliente.orcamentos');
 
 Route::post('/cliente/avatar', [
     ClienteController::class,
@@ -139,11 +150,13 @@ Route::post('/logout', [LoginController::class, 'logout'])
 
 // Orcamento
 Route::get('/orcamento', [OrcamentoController::class, 'create'])
+    ->middleware('auth') //adicionado middleware auth para que apenas usuários logados possam acessar a rota
     ->name('orcamento');
 
 Route::post('/orcamento', [OrcamentoController::class, 'store'])
+    ->middleware('auth') // adicionado middleware auth para que apenas usuários logados possam acessar a rota
     ->name('orcamento.store');
-
+ //n gostei de ter q fcar dando satisfação aaaaaaaaaaaaaaa kkkkkkkkkkk
 
 // Pacotes
 Route::get('/pacotes', [PacoteController::class, 'index'])
@@ -151,3 +164,15 @@ Route::get('/pacotes', [PacoteController::class, 'index'])
 
 Route::get('/pacotes/{pacote}', [PacoteController::class, 'show'])
     ->name('pacotes.show');
+
+// Chat IA
+Route::middleware('auth')
+    ->prefix('chat')
+    ->name('chat.')
+    ->group(function () {
+        Route::get('/messages', [ChatController::class, 'history'])
+            ->name('history');
+
+        Route::post('/messages', [ChatController::class, 'store'])
+            ->name('messages.store');
+    }); // rota para o chat de IA, com middleware auth para que apenas usuários logados possam acessar a rotaq

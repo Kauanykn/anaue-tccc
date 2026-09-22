@@ -22,9 +22,13 @@
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/tema.css') }}">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('css/chat-widget.css') }}">
+
     @stack('styles')
   
 </head>
+
 <body>
     @include('components.navbar')
 
@@ -35,6 +39,11 @@
          @include('components.footer')
     </footer>
 
+    @auth
+        @include('components.chat-widget')
+    @endauth
+
     <script src="{{ asset('jss/navbar.js') }}"></script>
+    <script src="{{ asset('jss/chat-widget.js') }}" defer></script>
 </body>
 </html>
