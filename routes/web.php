@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DepoimentoController as AdminDepoimentoController;
 use App\Http\Controllers\Admin\OrcamentoController as AdminOrcamentoController;
 use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
+use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ClienteController;
@@ -43,6 +44,11 @@ Route::prefix('admin')
             AdminOrcamentoController::class,
             'index'
         ])->name('orcamentos.index');
+
+        Route::get('/usuarios', [ 
+            UsuarioController::class, 
+            'index' 
+        ])->name('usuarios.index');
 
         Route::resource('galeria', GaleriaController::class)
             ->parameters(['galeria' => 'galeria'])

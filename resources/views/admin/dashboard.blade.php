@@ -72,6 +72,8 @@
                 
             <i class="fa-solid fa-file-invoice-dollar"></i>
              Orçamentos
+            </a>
+                
                 <a
                 href="{{ route('admin.depoimentos.index') }}"
                 class="admin-link"
@@ -79,6 +81,15 @@
                 <i class="fa-solid fa-star"></i>
                 Avaliações
             </a>
+
+            <a
+                href="{{ route('admin.usuarios.index') }}"
+                class="admin-link"
+            >
+                <i class="fa-solid fa-users"></i>
+                Usuários
+            </a>
+
     
 
         </nav>
