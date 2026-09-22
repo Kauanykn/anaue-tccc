@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('depoimentos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+           
             $table->integer('nota');
             $table->text('comentario');
             $table->timestamps();

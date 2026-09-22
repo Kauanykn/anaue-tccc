@@ -307,6 +307,12 @@ body {
 
 .acoes-grid a:hover {
     border-color: #f20b78;
+    background-color: #f20b78;
+    color: #ffff;
+
+    .fa-solid {
+        color: #fff;
+    }
 }
 
 .acoes-grid i {
@@ -368,6 +374,20 @@ body {
 
 }
 
+.admin-depoimentos-resumo {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.admin-depoimentos-resumo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.btn-administrar-depoimentos {
+    width: 100%;
+}
+
 @media (max-width: 600px) {
     .admin-dashboard { display: block; }
     .admin-sidebar { width: 100%; min-height: 64px; padding: 10px 14px; flex-direction: row; align-items: center; gap: 12px; }
@@ -387,22 +407,6 @@ body {
     .acoes-rapidas { padding: 20px; }
     .acoes-grid a { padding: 16px; }
 }
- .admin-depoimentos-resumo {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .admin-depoimentos-resumo:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-    }
-
-    .btn-administrar-depoimentos {
-        width: 100%;
-    }
-
-
-}
 
 /* =========================================================
    RESUMO DOS DEPOIMENTOS
@@ -410,7 +414,7 @@ body {
 
 .admin-depoimentos-resumo {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 30px;
     transition: all 0.2s;
