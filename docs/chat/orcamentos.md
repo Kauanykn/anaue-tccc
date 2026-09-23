@@ -1,29 +1,135 @@
-# Orçamentos
+## Orçamentos
 
 ## Quem pode solicitar
 
-É necessário estar com uma conta autenticada para acessar e enviar uma solicitação de orçamento.
+É necessário estar autenticado em uma conta para acessar e enviar uma solicitação de orçamento.
 
 ## Como solicitar
 
-O formulário de orçamento pede nome, telefone ou WhatsApp e data desejada do evento. Também é possível informar e-mail, nome e idade do aniversariante, quantidade de convidados, pacote de interesse e observações sobre a festa.
+Para solicitar um orçamento, o cliente deve preencher o formulário disponível na plataforma.
 
-A quantidade de convidados, quando preenchida, deve ser pelo menos 1. O campo de pacote também permite a opção "Ainda não sei".
+Os campos obrigatórios são:
 
-## Disponibilidade de data
+Nome
+Telefone ou WhatsApp
+Data desejada do evento
 
-A tela mostra um calendário. Datas anteriores e datas que já possuem uma solicitação ficam indisponíveis. Não é possível enviar uma nova solicitação para uma data que já tenha um orçamento registrado.
+Também podem ser informados:
 
-## Depois do envio
+E-mail
+Nome do aniversariante
+Idade do aniversariante
+Quantidade de convidados
+Pacote de interesse
+Observações sobre a festa
 
-Um novo pedido começa com o status **pendente**. A página informa que a equipe analisa os detalhes e retorna com uma proposta personalizada em até 24 horas.
+A quantidade de convidados deve ser maior que zero quando preenchida.
+
+No campo de pacote, também é possível selecionar a opção "Ainda não sei".
+
+## Disponibilidade de datas
+
+A tela de orçamento exibe um calendário com as datas disponíveis.
+
+Não é possível solicitar orçamento para:
+
+Datas anteriores à data atual.
+Datas que já possuem uma solicitação de orçamento registrada.
+
+Quando uma data está indisponível no calendário, significa que ela não pode receber novas solicitações.
+
+## Alteração da solicitação
+
+Após o envio do orçamento, o cliente deve aguardar a análise da equipe.
+
+A documentação não prevê edição direta da solicitação pelo cliente.
+
+Prazo de resposta
+
+Após o envio, a solicitação é encaminhada para análise.
+
+A equipe retorna com uma proposta personalizada em até 24 horas.
+
+## Status do orçamento
+
+Todo orçamento recém-enviado inicia com o status Pendente.
 
 Os possíveis status são:
 
-- **Pendente:** a solicitação ainda está em análise.
-- **Aprovado:** o orçamento foi aprovado; a equipe entrará em contato para os próximos passos.
-- **Recusado:** o pedido não foi aprovado; o cliente pode entrar em contato para verificar outras possibilidades.
+Pendente
 
-## Onde acompanhar
+A solicitação foi recebida e está em análise pela equipe.
 
-Na área do cliente, em **Meus orçamentos**, o usuário vê somente as solicitações feitas pela própria conta. Cada cartão mostra número do pedido, evento ou aniversariante, status, data, pacote, quantidade de convidados e data da solicitação.
+Aprovado
+
+O orçamento foi aprovado.
+
+A equipe entrará em contato para informar os próximos passos.
+
+Recusado
+
+O orçamento não foi aprovado.
+
+O cliente pode entrar em contato para verificar outras possibilidades.
+
+Onde acompanhar
+
+O acompanhamento pode ser realizado na área do cliente, na seção Meus Orçamentos.
+
+Cada usuário visualiza apenas os orçamentos realizados pela própria conta.
+
+Informações exibidas em Meus Orçamentos
+
+Cada orçamento exibe:
+
+Número do pedido
+Nome do evento ou aniversariante
+Status
+Data do evento
+Pacote selecionado
+Quantidade de convidados
+Data da solicitação
+
+## Perguntas frequentes
+Preciso estar logado para pedir um orçamento?
+
+Sim. Apenas usuários autenticados podem enviar solicitações de orçamento.
+
+Posso solicitar mais de um orçamento?
+
+Sim, desde que cada solicitação utilize uma data disponível.
+
+Posso fazer dois orçamentos para a mesma data?
+
+Não. Datas que já possuem uma solicitação cadastrada ficam indisponíveis para novos pedidos.
+
+Quanto tempo demora para receber uma resposta?
+
+A equipe analisa a solicitação e retorna com uma proposta personalizada em até 24 horas.
+
+Como saber se meu orçamento foi analisado?
+
+O status pode ser consultado na área Meus Orçamentos.
+
+Onde vejo meus pedidos?
+
+Na área Meus Orçamentos da sua conta.
+
+Posso informar o pacote depois?
+
+Sim. Durante a solicitação existe a opção "Ainda não sei" no campo de pacote.
+
+
+## Respostas permitidas
+ 
+### O orçamento é gratuito?
+sim, não existe cobrança pra solicitar um orçamento.
+ 
+### Posso cancelar um orçamento?
+A documentação não informa um processo de cancelamento.
+ 
+### Posso alterar a data depois de enviar?
+infelizmente não é possivel alterar a data após o envio da solicitação, mas você pode entrar em contato com o anauê e discutirem sobre a alteração!.
+ 
+### Posso falar com um atendente?
+A documentação informa apenas que a equipe entra em contato após a análise do orçamento.

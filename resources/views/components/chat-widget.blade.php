@@ -16,9 +16,17 @@
 
     <section class="chat-widget__panel" id="chat-panel" hidden>
         <header class="chat-widget__header">
-            <div>
-                <strong>Assistente virtual</strong>
-                <span>Respostas baseadas na documentação</span>
+            <div class="chat-widget__identity">
+                <img
+                    class="chat-widget__avatar"
+                    src="{{ asset('images/mascote-gato.png') }}"
+                    alt=""
+                    onerror="this.hidden = true"
+                >
+                <div class="chat-widget__identity-copy">
+                    <strong>Mia, Mascote Inteligente Anauê 🐱</strong>
+                    <span>Seu ajudante para planejar a festa!</span>
+                </div>
             </div>
 
             <button

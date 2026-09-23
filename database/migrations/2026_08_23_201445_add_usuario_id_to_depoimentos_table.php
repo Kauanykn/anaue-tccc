@@ -9,15 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up(): void
+    public function up(): void
     {
-    Schema::table('orcamentos', function (Blueprint $table) {
-        $table->foreignId('user_id')
-            ->nullable()
-            ->after('id')
-            ->constrained()
-            ->nullOnDelete();
-    });
+        Schema::table('depoimentos', function (Blueprint $table) {
+            $table->foreignId('usuario_id')
+                ->nullable()
+                ->after('id')
+                ->constrained('users')
+                ->nullOnDelete();
+        });
     }
 
     /**
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('depoimentos', function (Blueprint $table) {
-            //
+            $table->dropConstrainedForeignId('usuario_id');
         });
     }
 };

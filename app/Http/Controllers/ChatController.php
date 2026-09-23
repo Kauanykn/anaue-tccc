@@ -70,29 +70,25 @@ class ChatController extends Controller
 
         $context = $documentationSearch->contextFor($question);
 
-        if ($context === '') {
-            $answer = 'Não encontrei essa informação na documentação disponível.';
-        } else {
-            try {
-                $answer = $gemini->answer($question, $context, $history);
-            } catch (RequestException $exception) {
-                Log::error('Erro ao consultar Gemini.', [
-                    'status' => $exception->response?->status(),
-                    'body' => $exception->response?->body(),
-                ]);
+        try {
+            $answer = $gemini->answer($question, $context, $history);
+        } catch (RequestException $exception) {
+            Log::error('Erro ao consultar Gemini.', [
+                'status' => $exception->response?->status(),
+                'body' => $exception->response?->body(),
+            ]);
 
-                return response()->json([
-                    'message' => 'Não foi possível obter uma resposta agora. Tente novamente em alguns instantes.',
-                ], 503);
-            } catch (\Throwable $exception) {
-                Log::error('Erro inesperado no chat.', [
-                    'error' => $exception->getMessage(),
-                ]);
+            return response()->json([
+                'message' => 'Não foi possível obter uma resposta agora. Tente novamente em alguns instantes.',
+            ], 503);
+        } catch (\Throwable $exception) {
+            Log::error('Erro inesperado no chat.', [
+                'error' => $exception->getMessage(),
+            ]);
 
-                return response()->json([
-                    'message' => 'Ocorreu um erro inesperado. Tente novamente.',
-                ], 500);
-            }
+            return response()->json([
+                'message' => 'Ocorreu um erro inesperado. Tente novamente.',
+            ], 500);
         }
 
         $assistantMessage = ChatMessage::create([
