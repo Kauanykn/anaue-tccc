@@ -1,9 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Pacotes')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/admin-pacotes.css') }}">
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/admin-pacotes.css') }}"
+>
+
 @endpush
 
 @section('content')

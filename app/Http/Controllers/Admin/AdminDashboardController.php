@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Pacote;
 use App\Models\Galeria;
 use App\Models\Depoimento;
+use App\Models\Orcamento;
 
 class AdminDashboardController extends Controller
 {
-        public function index()
+    public function index()
     {
         $totalPacotes = Pacote::count();
         $totalFotos = Galeria::count();
+
+        $totalOrcamentos = Orcamento::where('status', 'pendente')->count();
 
         $totalDepoimentos = Depoimento::count();
 
@@ -23,8 +26,10 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard', compact(
             'totalPacotes',
             'totalFotos',
+            'totalOrcamentos',
             'totalDepoimentos',
             'mediaAvaliacoes'
         ));
     }
 }
+    

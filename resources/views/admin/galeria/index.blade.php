@@ -1,12 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/admin-galeria.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css') }}">
 @endpush
 
 @section('content')
 
 <section class="gerenciar-galeria">
+
 
     <div class="gerenciar-galeria__container">
 
