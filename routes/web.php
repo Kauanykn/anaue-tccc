@@ -50,6 +50,11 @@ Route::prefix('admin')
             'index' 
         ])->name('usuarios.index');
 
+        Route::put('/usuarios/{usuario}', [
+            UsuarioController::class,
+            'update'
+        ])->name('usuarios.update');
+
         Route::resource('galeria', GaleriaController::class)
             ->parameters(['galeria' => 'galeria'])
             ->except(['show']);
