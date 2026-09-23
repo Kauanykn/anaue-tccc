@@ -14,12 +14,6 @@
             <p>Veja as solicitações enviadas pelos clientes.</p>
         </div>
 
-        <a
-            href="{{ route('admin.dashboard') }}"
-            style="padding: 10px 16px; background: #eee; border-radius: 8px; text-decoration: none; color: #222;"
-        >
-            Voltar ao painel
-        </a>
     </div>
 
     @if ($orcamentos->isEmpty())
