@@ -1,6 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css') }}">
+@endpush
 
 <section style="max-width: 1200px; margin: 50px auto; padding: 0 20px;">
     <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 30px;">

@@ -9,7 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Dashboard Administrativo | Anauê</title>
+    <title>Painel Administrativo</title>
 
     <link
         rel="stylesheet"
@@ -26,91 +26,7 @@
 
 <div class="admin-dashboard">
 
-    {{-- SIDEBAR --}}
-    <aside class="admin-sidebar">
-
-        <div class="admin-logo">
-            <img
-                src="{{ asset('images/logo.png') }}"
-                alt="Anauê"
-            >
-        </div>
-
-
-        <nav class="admin-menu">
-
-            <a
-                href="{{ route('admin.dashboard') }}"
-                class="admin-link ativo"
-            >
-                <i class="fa-solid fa-house"></i>
-                Dashboard
-            </a>
-
-
-            <a
-                href="{{ route('admin.pacotes.index') }}"
-                class="admin-link"
-            >
-                <i class="fa-solid fa-box-open"></i>
-                Pacotes
-            </a>
-
-
-            <a
-                href="{{ route('admin.galeria.index') }}"
-                class="admin-link"
-            >
-                <i class="fa-regular fa-images"></i>
-                Galeria
-            </a>
-
-            <a
-             href="{{ route('admin.orcamentos.index') }}"
-             class="admin-link"
-            >
-                
-            <i class="fa-solid fa-file-invoice-dollar"></i>
-             Orçamentos
-            </a>
-                
-                <a
-                href="{{ route('admin.depoimentos.index') }}"
-                class="admin-link"
-            >
-                <i class="fa-solid fa-star"></i>
-                Avaliações
-            </a>
-
-            <a
-                href="{{ route('admin.usuarios.index') }}"
-                class="admin-link"
-            >
-                <i class="fa-solid fa-users"></i>
-                Usuários
-            </a>
-
-    
-
-        </nav>
-
-
-        <form
-            action="{{ route('logout') }}"
-            method="POST"
-            class="admin-logout"
-        >
-
-            @csrf
-
-            <button type="submit">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                Sair
-            </button>
-
-        </form>
-
-    </aside>
+    @include('admin.partials.sidebar')
 
 
     {{-- CONTEÚDO --}}
@@ -122,7 +38,7 @@
                 <span>PAINEL ADMINISTRATIVO</span>
 
                 <h1>
-                    Olá, {{ Auth::user()->name }} 👋
+                    Olá, {{ Auth::user()->name }}
                 </h1>
 
                 <p>
