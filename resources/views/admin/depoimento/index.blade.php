@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'Depoimentos')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/depoimentos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-depoimentos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-dashboard.css') }}">
 @endpush
 
 @section('content')

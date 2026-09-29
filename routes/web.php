@@ -21,8 +21,10 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DepoimentoController as AdminDepoimentoController;
 use App\Http\Controllers\Admin\OrcamentoController as AdminOrcamentoController;
 use App\Http\Controllers\Admin\PacoteController as AdminPacoteController;
+use App\Http\Controllers\Admin\UsuarioController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ChatController;// importando o ChatController do chat de ia
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DepoimentoController;
 use App\Http\Controllers\GaleriaController;
@@ -31,8 +33,11 @@ use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\PacoteController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\ChatController;// importando o ChatController do chat de ia
 use App\Http\Controllers\Admin\AdicionalController; // importando o [AdicionalController]
+=======
+>>>>>>> 1d6b9529e3fde762378b45a9258043f91782d70b
 
 
 // Area admin
@@ -46,10 +51,21 @@ Route::prefix('admin')
             'index'
         ])->name('orcamentos.index');
 
+        Route::get('/usuarios', [ 
+            UsuarioController::class, 
+            'index' 
+        ])->name('usuarios.index');
+
+        Route::put('/usuarios/{usuario}', [
+            UsuarioController::class,
+            'update'
+        ])->name('usuarios.update');
+
         Route::patch('/orcamentos/{orcamento}/status', [
-        AdminOrcamentoController::class,
-        'atualizarStatus'
-        ])->name('orcamentos.status'); // rota para atualizar o status do orçamento
+            AdminOrcamentoController::class,
+            'atualizarStatus'
+            ])->name('orcamentos.status'); // rota para atualizar o status do orçamento
+    
 
         Route::resource('galeria', GaleriaController::class)
             ->parameters(['galeria' => 'galeria'])
