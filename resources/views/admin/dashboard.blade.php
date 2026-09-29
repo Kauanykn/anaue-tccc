@@ -211,7 +211,7 @@
 
     <div class="acoes-grid">
         
-        <a href="{{ route('admin.pacotes.create') }}">
+             <a href="{{ route('admin.pacotes.create') }}">
                     <i class="fa-solid fa-plus"></i>
 
                     <div>
@@ -229,6 +229,17 @@
                         <span>Adicionar uma foto à galeria</span>
                     </div>
                 </a>
+
+                <a href="{{ route('admin.adicionais.index') }}#">
+                    <i class="fa-solid fa-plus"></i>
+                    
+                    <div>
+                        <strong>Novo adicional</strong>
+                        <span>Adicionar um novo adicional</span>
+                    </div>
+                </a>
+                
+                
                 
                 <a
                     href="{{ route('admin.depoimentos.index') }}"

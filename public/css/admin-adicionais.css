@@ -1,0 +1,444 @@
+/* ================================
+   ADMIN - ADICIONAIS
+   ================================ */
+
+.admin-adicionais,
+.form-adicional {
+    width: min(1100px, 92%);
+    margin: 45px auto;
+}
+
+/* ================================
+   CABEÇALHO
+   ================================ */
+
+.admin-adicionais__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.admin-adicionais__cabecalho h1,
+.form-adicional__cabecalho h1 {
+    margin: 0;
+    color: #252525;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.admin-adicionais__cabecalho p,
+.form-adicional__cabecalho p {
+    margin: 8px 0 0;
+    color: #777;
+    font-size: 15px;
+}
+
+/* ================================
+   BOTÃO PRINCIPAL
+   ================================ */
+
+.btn-adicionar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 13px 20px;
+
+    background: #f20f79;
+    color: #fff;
+
+    border-radius: 10px;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.btn-adicionar:hover {
+    background: #f20f79;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   MENSAGEM
+   ================================ */
+
+.mensagem-sucesso {
+    padding: 14px 18px;
+    margin-bottom: 25px;
+
+    background: #eef7f1;
+    border: 1px solid #cfe5d7;
+    border-radius: 10px;
+
+    color: #397052;
+    font-size: 14px;
+}
+
+/* ================================
+   GRID
+   ================================ */
+
+.adicionais-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* ================================
+   CARD
+   ================================ */
+
+.adicional-card {
+    position: relative;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border: 1px solid #e9e4e2;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(80, 70, 65, 0.06);
+
+    transition: 0.25s ease;
+}
+
+.adicional-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 9px 25px rgba(80, 70, 65, 0.10);
+}
+
+/* detalhe lateral */
+
+.adicional-card::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+
+    width: 4px;
+
+    background: #e7a9ad;
+
+    border-radius: 0 5px 5px 0;
+}
+
+/* ================================
+   CONTEÚDO DO CARD
+   ================================ */
+
+.adicional-card__conteudo {
+    padding-left: 8px;
+}
+
+.adicional-card h2 {
+    margin: 0 0 10px;
+
+    color: #292929;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.adicional-card p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.adicional-card strong {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #f20f79;
+
+    font-size: 19px;
+}
+
+/* ================================
+   AÇÕES
+   ================================ */
+
+.adicional-card__acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top: 1px solid #eee9e7;
+}
+
+.btn-editar,
+.btn-excluir {
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-editar {
+    background: #eef5f9;
+    color: #66cdd9;
+
+    text-decoration: none;
+}
+
+.btn-editar:hover {
+    background: #dfeef5;
+}
+
+.btn-excluir {
+    background: #e8e6e6;
+    color: #f20f79;
+
+    border: none;
+}
+
+.btn-excluir:hover {
+    background: #ffe1e3;
+}
+
+/* ================================
+   SEM ADICIONAIS
+   ================================ */
+
+.sem-adicionais {
+    padding: 65px 25px;
+
+    text-align: center;
+
+    background: #fffafa;
+
+    border: 1px dashed #e4c9cb;
+    border-radius: 16px;
+}
+
+.sem-adicionais h2 {
+    margin: 0 0 8px;
+
+    color: #333;
+    font-size: 21px;
+}
+
+.sem-adicionais p {
+    margin: 0 0 25px;
+
+    color: #777;
+}
+
+/* ================================
+   FORMULÁRIO
+   ================================ */
+
+.form-adicional {
+    max-width: 720px;
+}
+
+.form-adicional__cabecalho {
+    margin-bottom: 30px;
+}
+
+.form-adicional form {
+    padding: 30px;
+
+    background: #fff;
+
+    border: 1px solid #e9e4e2;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 22px rgba(80, 70, 65, 0.06);
+}
+
+/* ================================
+   CAMPOS
+   ================================ */
+
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #383838;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 14px;
+
+    background: #fff;
+
+    border: 1px solid #ddd6d4;
+    border-radius: 9px;
+
+    color: #333;
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #aaa;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #8fb5cd;
+
+    box-shadow: 0 0 0 3px rgba(111, 159, 193, 0.12);
+}
+
+/* ================================
+   ERROS
+   ================================ */
+
+.mensagem-erro {
+    margin: 20px 0;
+    padding: 14px 18px;
+
+    background: #fff1f1;
+
+    border: 1px solid #efcccc;
+    border-radius: 10px;
+
+    color: #a75c61;
+
+    font-size: 14px;
+}
+
+.mensagem-erro p {
+    margin: 4px 0;
+}
+
+/* ================================
+   BOTÕES DO FORM
+   ================================ */
+
+.form-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 30px;
+    padding-top: 22px;
+
+    border-top: 1px solid #eee9e7;
+}
+
+.btn-voltar {
+    padding: 11px 18px;
+
+    color: #666;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.btn-voltar:hover {
+    background: #f5f3f2;
+}
+
+.btn-salvar {
+    padding: 12px 20px;
+
+    background: #6f9fc1;
+    color: #fff;
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.btn-salvar:hover {
+    background: #5d8dab;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   RESPONSIVO
+   ================================ */
+
+@media (max-width: 750px) {
+
+    .admin-adicionais,
+    .form-adicional {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .admin-adicionais__cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .adicionais-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-adicional form {
+        padding: 22px;
+    }
+
+    .form-acoes {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .btn-voltar,
+    .btn-salvar {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}

@@ -32,6 +32,7 @@ use App\Http\Controllers\PacoteController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatController;// importando o ChatController do chat de ia
+use App\Http\Controllers\Admin\AdicionalController; // importando o [AdicionalController]
 
 
 // Area admin
@@ -176,3 +177,6 @@ Route::middleware('auth')
         Route::post('/messages', [ChatController::class, 'store'])
             ->name('messages.store');
     }); // rota para o chat de IA, com middleware auth para que apenas usuários logados possam acessar a rotaq
+
+Route::resource('admin/adicionais', AdicionalController::class)
+    ->names('admin.adicionais'); 
