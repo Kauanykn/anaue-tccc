@@ -90,7 +90,7 @@ Route::get('/cliente/dashboard', [ClienteController::class, 'dashboard'])
 // Lista os orçamentos solicitados exclusivamente pelo cliente autenticado.
 Route::get('/cliente/orcamentos', [ClienteController::class, 'orcamentos'])
     ->middleware('auth')
-    ->name('cliente.orcamentos');
+    ->name('cliente.orcamentos.orcamentos');
 
 Route::post('/cliente/avatar', [
     ClienteController::class,
