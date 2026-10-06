@@ -1,73 +1,33 @@
-<section class="pacotes-home">
+<section class="pacotes-home" aria-labelledby="pacotes-home-titulo">
     <div class="pacotes-home__container">
+        <div class="pacotes-home__conteudo">
+            <span class="pacotes-home__categoria">
+                O que oferecemos <span aria-hidden="true"></span>
+            </span>
 
-        <span class="pacotes-home__categoria">
-            <span></span>
-            O que oferecemos
-        </span>
+            <h2 id="pacotes-home-titulo">
+                Mais que<br>
+                comida, uma<br>
+                <span>experiência.</span>
+            </h2>
 
-        <h2>Pacotes pensados pra cada tipo de festa</h2>
+            <p>
+                Da primeira mordida ao último brinde, cada sabor conta uma parte da celebração.
+                Conheça cardápios pensados em cada detalhe para surpreender seus convidados e
+                transformar momentos especiais em memórias ainda mais saborosas.
+            </p>
 
-        <div class="pacotes-home__lista">
-
-            <article class="pacote-card">
-                <div class="pacote-card__imagem">
-                    <img
-                        src="{{ asset('images/pacotes/coquetel.jpeg') }}"
-                        alt="Pacote Coquetel"
-                    >
-                </div>
-
-                <h3>Coquetel</h3>
-
-                <p>
-                    Até 50 convidados, cardápio completo e sofisticado
-                </p>
-
-                <strong>A partir de R$ 3.480</strong>
-            </article>
-
-            <article class="pacote-card">
-                <div class="pacote-card__imagem">
-                    <img
-                        src="{{ asset('images/pacotes/festa-2.jpeg') }}"
-                        alt="Pacote Festa 2"
-                    >
-                </div>
-
-                <h3>Festa 2</h3>
-
-                <p>
-                    Até 50 convidados, cardápio completo e sofisticado
-                </p>
-
-                <strong>A partir de R$ 3.480</strong>
-            </article>
-
-            <article class="pacote-card">
-                <div class="pacote-card__imagem">
-                    <img
-                        src="{{ asset('images/pacotes/brincalegal.jpeg') }}"
-                        alt="Pacote Brinca Legal"
-                    >
-                </div>
-
-                <h3>Brinca legal</h3>
-
-                <p>
-                    Até 50 convidados, cardápio completo e sofisticado
-                </p>
-
-                <strong>A partir de R$ 2.890</strong>
-            </article>
-
-        </div>
-
-        <div class="pacotes-home__rodape">
-            <a href="{{ url('/pacotes') }}">
-                Ver todos os pacotes
+            <a class="pacotes-home__link" href="{{ url('/pacotes') }}">
+                Conheça os pacotes
             </a>
         </div>
 
+        <div class="pacotes-home__imagem">
+            <img
+                src="{{ asset('images/pacotes/coquetel.jpeg') }}"
+                alt="Mesa de coquetel com petiscos variados para uma celebração"
+                loading="lazy"
+            >
+        </div>
     </div>
 </section>

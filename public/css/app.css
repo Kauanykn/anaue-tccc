@@ -156,7 +156,7 @@
     margin-bottom: 12px;
     color: var(--rosa);
     font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -171,7 +171,7 @@
     margin: 0 0 15px;
     color: var(--preto);
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 4vw, 45px);
+    font-size: clamp(38px, 4.5vw, 52px);
     line-height: 1.1;
     text-transform: uppercase;
 }
@@ -181,7 +181,7 @@
     margin: 0 0 26px;
     color: var(--cinza);
     font-family: 'DM Sans', sans-serif;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.45;
 }
 
@@ -199,12 +199,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 40px;
-    padding: 10px 17px;
+    min-height: 48px;
+    padding: 12px 22px;
     border: 1px solid transparent;
     border-radius: 50px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     transition: 0.2s ease;
@@ -328,11 +328,11 @@
     }
 
     .hero__texto h1 {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .hero__texto p {
-        font-size: 16px;
+        font-size: 17px;
     }
 
     .hero__fotos {

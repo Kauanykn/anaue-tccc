@@ -52,4 +52,4 @@ Se precisar de mais detalhes, nossa equipe poderá ajudar pelos canais de contat
  
 ### Você pode responder qualquer pergunta?
  
-🎈 Eu adoro conversar, mas fui criado para ajudar com assuntos relacionados ao Anauê e ao universo das festas infantis.
+Eu adoro conversar! Sei bastante coisa e posso ajudar com ideias de festa, brincadeiras e curiosidades, mas para informações específicas do Anauê eu me baseio na documentação do sistema.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pacote;
+use App\Models\Adicional;
 
 class PacoteController extends Controller
 {
@@ -21,6 +22,8 @@ class PacoteController extends Controller
             abort(404);
         }
 
-        return view('pacotes.show', compact('pacote'));
+        $adicionais = Adicional::orderBy('nome')->get();
+
+        return view('pacotes.show', compact('pacote', 'adicionais'));
     }
 }

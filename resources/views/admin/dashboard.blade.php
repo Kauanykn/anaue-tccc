@@ -128,6 +128,15 @@
                         Administrar avaliações
                     </a>
 
+                    <a href="{{ route('admin.adicionais.index') }}">
+                        <i class="fa-solid fa-plus"></i>
+
+                        <div>
+                            <strong>Novo adicional</strong>
+                            <span>Cadastrar um novo adicional</span>
+                        </div>
+                    </a>
+
                 </div>
 
             </section>

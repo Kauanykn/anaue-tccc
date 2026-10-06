@@ -218,58 +218,17 @@
 
         <h3>
             <i class="fa-solid fa-wand-magic-sparkles"></i>
-            Festa
+            Opções disponíveis
         </h3>
 
-        <div class="adicional-item">
-            <span>Arco de bexiga na entrada</span>
-            <strong>R$ 220,00</strong>
-        </div>
-
-        <div class="adicional-item">
-            <span>Monitor exclusivo</span>
-            <strong>R$ 90,00</strong>
-        </div>
-
-        <div class="adicional-item">
-            <span>Rolha para chope</span>
-            <strong>R$ 150,00</strong>
-        </div>
-
-        <div class="adicional-item">
-            <span>Rolha para cerveja</span>
-            <strong>R$ 125,00</strong>
-        </div>
-
-        <div class="adicional-item">
-            <span>Balde com gelo</span>
-            <strong>R$ 13,00</strong>
-        </div>
-
-    </div>
-
-
-    <div class="adicionais__grupo">
-
-        <h3>
-            <i class="fa-solid fa-burger"></i>
-            Alimentação e bebidas
-        </h3>
-
-        <div class="adicional-item">
-            <span>Mini hambúrguer caseiro</span>
-            <strong>R$ 9,00</strong>
-        </div>
-
-        <div class="adicional-item">
-            <span>Batata frita - 50 pessoas</span>
-            <strong>R$ 275,00</strong>
-        </div>
-
-        <div class="adicional-item">
-            <span>Batata recheada</span>
-            <strong>R$ 6,00</strong>
-        </div>
+        @forelse ($adicionais as $adicional)
+            <div class="adicional-item">
+                <span>{{ $adicional->nome }}</span>
+                <strong>R$ {{ number_format($adicional->preco, 2, ',', '.') }}</strong>
+            </div>
+        @empty
+            <p>Nenhum adicional disponível no momento.</p>
+        @endforelse
 
     </div>
 
@@ -288,7 +247,7 @@
 
             </div>
 
-            <a href="#" class="btn-orcamento-pacote">
+            <a href="/orcamento" class="btn-orcamento-pacote">
                 Solicitar orçamento
             </a>
 

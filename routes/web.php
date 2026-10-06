@@ -33,7 +33,7 @@ use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\PacoteController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\AdicionalController;
 
 // Area admin
 Route::prefix('admin')
@@ -70,6 +70,12 @@ Route::prefix('admin')
             ->except(['show']);
 
         Route::resource('depoimentos', AdminDepoimentoController::class)
+            ->except(['show']);
+
+        // O grupo já aplica o prefixo URL "admin" e o prefixo de nome "admin.".
+        Route::resource('adicionais', AdicionalController::class)
+            // Mantém o parâmetro no singular esperado pelo binding do controller.
+            ->parameters(['adicionais' => 'adicional'])
             ->except(['show']);
     });
 

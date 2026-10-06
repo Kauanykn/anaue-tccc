@@ -56,5 +56,3 @@
 
     </div>
 </section>
-
-<script src="{{ asset('jss/home.js') }}"></script>

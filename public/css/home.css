@@ -1,171 +1,123 @@
-/* =========================
-   SEÇÃO DO ESPAÇO
-========================= */
-
-/* =========================
-   SEÇÃO DO ESPAÇO
-========================= */
+/* ===== ESPAÇO =====
+   Substitua TODO o bloco antigo de .espaco (e .espaco__*) por este. */
 
 .espaco {
-    padding: 95px 30px;
-    background-color: #fff8fc;
+    --espaco-azul: #5fc8dc;
+    --espaco-texto: #3a3a3a;
+
+    padding: 56px 24px 72px;
+    background: var(--fundo);
 }
 
 .espaco__container {
-    background-color: #fff8fc;
-    width: 100%;
     max-width: 1120px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    align-items: center;
-    gap: 75px;
+    grid-template-columns: 1fr 1fr 1.05fr;
+    grid-template-areas:
+        "principal principal titulo"
+        "piscina   trator    titulo";
+    gap: 22px 16px;
+    align-items: start;
 }
 
-.espaco__texto {
-    max-width: 540px;
+/* ---------- Imagens ---------- */
+.espaco__img {
+    margin: 0;
+    overflow: hidden;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.espaco__img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.espaco__img--principal { grid-area: principal; aspect-ratio: 16 / 8.5; }
+.espaco__img--piscina,
+.espaco__img--trator    { aspect-ratio: 4 / 3; }
+.espaco__img--piscina   { grid-area: piscina; }
+.espaco__img--trator    { grid-area: trator; }
+
+/* ---------- Título ---------- */
+.espaco__titulo {
+    grid-area: titulo;
+    align-self: center;
+    padding-left: 16px;
 }
 
 .espaco__eyebrow {
-    display: inline-block;
-    margin-bottom: 14px;
-    color: #f20b78;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.4px;
+    margin: 0 0 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: var(--espaco-azul);
 }
 
-.espaco__texto h2 {
-    margin-bottom: 18px;
-    color: #17152b;
-    font-family: "Playfair Display", serif;
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 1.05;
-}
-
-.espaco__texto > p {
-    margin-bottom: 30px;
-    color: #5d5860;
-    font-size: 17px;
-    line-height: 1.65;
-}
-
-.espaco__itens {
-    display: grid;
-    gap: 18px;
-    margin-bottom: 32px;
-}
-
-.espaco__item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.espaco__item > i {
-    display: grid;
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-    place-items: center;
-    border-radius: 50%;
-    background: #f8d4e6;
-    color: #e8006c;
-    font-size: 16px;
-}
-
-.espaco__item h3 {
-    margin: 0 0 4px;
-    color: #24202a;
-    font-size: 17px;
-}
-
-.espaco__item p {
+.espaco__titulo h2 {
     margin: 0;
-    color: #6b6570;
-    font-size: 14px;
-    line-height: 1.45;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 4.2vw, 3.8rem);
+    line-height: 0.98;
+    text-transform: uppercase;
+    color: #111;
 }
 
-.espaco__botao {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 20px;
-    border-radius: 999px;
-    background: #f20b78;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform .2s ease, background .2s ease;
-}
-
-.espaco__botao:hover {
-    background: #d80768;
-    transform: translateY(-2px);
-}
-
-.espaco__foto {
-    position: relative;
-}
-
-.espaco__foto img {
+.espaco__titulo h2 span {
     display: block;
-    width: 100%;
-    height: 510px;
-    object-fit: cover;
-    border-radius: 24px;
-    box-shadow: 18px 18px 0 #f8d4e6;
 }
 
-.espaco__selo {
-    position: absolute;
-    right: -20px;
-    bottom: 28px;
-    padding: 15px 18px;
-    border-radius: 14px;
-    background: #25204b;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.35;
-    transform: rotate(-4deg);
+.espaco__destaque {
+    color: var(--espaco-azul);
 }
 
-@media (max-width: 800px) {
+/* ---------- Texto ---------- */
+.espaco__texto {
+    margin: 24px 0 0;
+    max-width: 440px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--espaco-texto);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 960px) {
+    .espaco__container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "titulo    titulo"
+            "principal principal"
+            "piscina   trator";
+    }
+
+    .espaco__titulo {
+        padding-left: 0;
+        align-self: start;
+    }
+
+    .espaco__titulo h2 { font-size: clamp(2.5rem, 7vw, 3.8rem); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 560px) {
     .espaco {
-        padding: 65px 20px;
+        padding: 40px 16px 56px;
     }
 
     .espaco__container {
-        grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 16px 12px;
     }
 
-    .espaco__foto {
-        max-width: 550px;
-        margin: 0 auto;
+    .espaco__titulo h2 {
+        font-size: clamp(2.2rem, 10vw, 2.8rem);
     }
 
-    .espaco__foto img {
-        height: 420px;
-    }
-}
-
-@media (max-width: 500px) {
-    .espaco__texto h2 {
-        font-size: 36px;
-    }
-
-    .espaco__foto img {
-        height: 350px;
-    }
-
-    .espaco__selo {
-        right: 10px;
-        bottom: 18px;
-    }
+    .espaco__eyebrow { margin-bottom: 14px; }
+    .espaco__texto { margin-top: 16px; font-size: .95rem; }
 }
 
 
@@ -174,135 +126,87 @@
 ========================= */
 
 .pacotes-home {
-    padding: 50px 30px 80px;
-    background-color: var(--fundo);
+    padding: 42px 34px 56px;
+    background: var(--fundo);
 }
 
 .pacotes-home__container {
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+    align-items: center;
+    gap: 48px;
 }
+
+.pacotes-home__conteudo { text-align: right; }
 
 .pacotes-home__categoria {
     display: flex;
     align-items: center;
-    gap: 8px;
-
-    margin-bottom: 10px;
-
-    color: #f30b78;
+    gap: 9px;
+    margin-bottom: 25px;
+    color: #e9c943;
     font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
 .pacotes-home__categoria span {
-    width: 12px;
+    width: 14px;
     height: 1px;
-    background-color: #f30b78;
+    background-color: #e9c943;
 }
 
 .pacotes-home h2 {
-    margin: 0 0 28px;
+    margin: 0 0 18px;
+    color: #050505;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(44px, 6vw, 68px);
+    font-weight: 700;
+    letter-spacing: -2.5px;
+    line-height: 1.08;
+    text-transform: uppercase;
+}
 
-    color: var(--preto);
+.pacotes-home h2 span { color: #f1d64f; }
+
+.pacotes-home__conteudo p {
+    max-width: 510px;
+    margin: 0 0 27px auto;
+    color: #555;
     font-family: 'DM Sans', sans-serif;
-    font-size: 34px;
-    line-height: 1.2;
+    font-size: 18px;
+    line-height: 1.48;
 }
 
-.pacotes-home__lista {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 42px;
-}
-
-.pacote-card {
-   
-    border-radius: 9px;
-    padding: 5px;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.pacote-card:hover {
-    transform: translateY(-8px);
-}
-
-.pacote-card__imagem {
-    width: 100%;
-    height: 200px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.pacote-card__imagem img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.pacote-card:hover .pacote-card__imagem img {
-    transform: scale(1.05);
-}
-
-.pacote-card h3 {
-    margin: 0 0 7px;
-     margin-top: 15px;
-    margin-bottom: 8px;
-
-    color: var(--preto);
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-}
-
-.pacote-card p {
-    margin: 0 0 8px;
-    margin-bottom: 10px;
-
-    color: var(--cinza);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.45;
-}
-
-.pacote-card strong {
-    color: #ff4e9b;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-}
-
-.pacotes-home__rodape {
-    margin-top: 55px;
-    text-align: center;
-}
-
-.pacotes-home__rodape a {
+.pacotes-home__link {
     display: inline-block;
-    padding-bottom: 4px;
-
-    border-bottom: 1px solid var(--preto);
-
-    color: var(--preto);
+    padding-bottom: 2px;
+    border-bottom: 1px solid #111;
+    color: #111;
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     text-decoration: none;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
 }
 
-.pacotes-home__rodape a:hover {
-    color: #f30b78;
-    border-color: #f30b78;
+.pacotes-home__link:hover { color: #b99d25; border-color: #b99d25; }
+
+.pacotes-home__imagem {
+    height: 420px;
+    overflow: hidden;
 }
+
+.pacotes-home__imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pacotes-home__rodape { display: none; }
 
 
 /* =========================
@@ -311,27 +215,18 @@
 
 @media (max-width: 900px) {
     .espaco__container {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "titulo    titulo"
+            "principal principal"
+            "piscina   trator";
+        gap: 24px 16px;
     }
 
-    .espaco__imagem {
-        max-width: 600px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .espaco__conteudo {
-        max-width: 700px;
-    }
-
-    .espaco__beneficios {
-        max-width: 560px;
-    }
-
-    .pacotes-home__lista {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .pacotes-home__container { grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr); gap: 30px; }
+    .pacotes-home h2 { font-size: clamp(42px, 6vw, 58px); }
+    .pacotes-home__conteudo p { font-size: 16px; }
+    .pacotes-home__imagem { height: 360px; }
 }
 
 @media (max-width: 650px) {
@@ -383,21 +278,14 @@
     }
 
     .pacotes-home {
-        padding: 40px 16px 60px;
+        padding: 36px 20px 48px;
     }
 
-    .pacotes-home h2 {
-        font-size: 28px;
-    }
-
-    .pacotes-home__lista {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .pacote-card__imagem {
-        height: 230px;
-    }
+    .pacotes-home__container { grid-template-columns: 1fr; gap: 30px; }
+    .pacotes-home__categoria { margin-bottom: 17px; }
+    .pacotes-home h2 { font-size: clamp(40px, 11vw, 58px); letter-spacing: -1.5px; }
+    .pacotes-home__conteudo p { font-size: 16px; }
+    .pacotes-home__imagem { height: min(82vw, 340px); }
 }
 
 /* ==========================
@@ -670,4 +558,26 @@
     .cta-orcamento__menina { right: 25px; bottom: -70px !important; width: 220px; }
     .estrela-1 { width: 42px; }
     .estrela-2 { width: 32px; }
+}
+
+/* Entradas discretas ativadas somente pela home. */
+.home-page.home-reveal-ready [data-reveal] {
+    opacity: 0;
+    translate: 0 18px;
+    transition:
+        opacity 650ms ease var(--reveal-delay, 0ms),
+        translate 650ms cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0ms);
+}
+
+.home-page.home-reveal-ready [data-reveal].is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page.home-reveal-ready [data-reveal] {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
 }

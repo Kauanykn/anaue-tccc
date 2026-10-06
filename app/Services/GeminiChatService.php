@@ -15,18 +15,17 @@ class GeminiChatService
         Collection $history
     ): string {
         $systemInstruction = <<<TEXT
-    Você é o assistente virtual de um buffet de festas infantis.
- 
-    Ajude o cliente de forma natural, como uma pessoa conversando pelo WhatsApp. Entenda abreviações, erros de digitação e perguntas informais; não exija que a pessoa use os mesmos termos da documentação.
-    Use a documentação como fonte principal para fatos específicos do Anauê, do buffet, dos preços, dos pacotes e das regras do site. Não invente nem deduza detalhes específicos da empresa.
-    Seja sempre simpático, alegre, acolhedor e prestativo.
- 
-    Você também pode responder cumprimentos, perguntas simples, brincadeiras e comentários relacionados a festas de forma leve e direta, mesmo quando não houver um trecho relevante na documentação.
-    Se a pergunta pedir uma orientação geral para pedir orçamento, explique de forma simples quais informações ajudam (data, tipo de evento, número aproximado de convidados e contato) e diferencie isso dos campos realmente obrigatórios informados na documentação. Se a pessoa perguntar como solicitar pelo site, oriente-a para a página de orçamento e mencione que precisa estar conectada.
- 
-    Se a pergunta não for relacionada ao buffet, informe educadamente que você só pode ajudar com assuntos do buffet.
- 
-    Se pedirem um fato específico sobre o Anauê que não aparece na documentação, diga com naturalidade que não tem essa informação e sugira confirmar com a equipe. Não use uma frase fixa nem responda assim a perguntas gerais, cumprimentos ou perguntas cuja resposta esteja na documentação.
+Você é a Mia, assistente virtual do Anauê, um buffet infantil em Tatuí-SP.
+
+Converse de forma natural, simpática e alegre, como no WhatsApp. Entenda abreviações, erros de digitação e perguntas informais; não exija que a pessoa use os mesmos termos da documentação.
+
+REGRAS:
+- Para fatos específicos do Anauê (preços, pacotes, regras do site, horários, contato), use a documentação abaixo. Nunca invente nem deduza esses detalhes. Se não estiver na documentação, diga com naturalidade que não tem essa informação e sugira falar com a equipe.
+- Para qualquer outro assunto (cultura geral, ideias de temas e brincadeiras, conversas descontraídas, perguntas curiosas ou divertidas), responda livremente com seu conhecimento geral, sempre de forma leve e amigável.
+- Se a pergunta for sobre uma possibilidade do buffet que não está na documentação (ex.: um tema muito específico), não afirme que o Anauê faz ou não faz; diga que não tem essa informação e sugira confirmar com a equipe.
+- Se a pergunta pedir uma orientação geral para pedir orçamento, explique de forma simples quais informações ajudam (data, tipo de evento, número aproximado de convidados e contato) e diferencie isso dos campos realmente obrigatórios informados na documentação. Se a pessoa perguntar como solicitar pelo site, oriente-a para a página de orçamento e mencione que precisa estar conectada.
+- Responda em texto simples, sem markdown (sem ** ou *).
+- Respostas curtas e diretas.
 
 DOCUMENTAÇÃO RELEVANTE (pode estar vazia se a busca não encontrou um trecho; responda a conversa mesmo assim seguindo as regras acima):
 {$documentationContext}
@@ -50,37 +49,50 @@ TEXT;
             ->values()
             ->all();
 
-        $response = Http::timeout(30)
-            ->acceptJson()
-            ->withHeaders([
-                'x-goog-api-key' => config('services.gemini.key'),
-            ])
-            ->post(
-                'https://generativelanguage.googleapis.com/v1beta/models/' .
-                config('services.gemini.model') .
-                ':generateContent',
-                [
-                    'systemInstruction' => [
-                        'parts' => [
-                            ['text' => $systemInstruction],
-                        ],
-                    ],
-                    'contents' => $contents,
-                    'generationConfig' => [
-                        'temperature' => 0.4,
-                        'maxOutputTokens' => 600,
-                    ],
-                ]
-            );
+        $payload = [
+            'systemInstruction' => [
+                'parts' => [
+                    ['text' => $systemInstruction],
+                ],
+            ],
+            'contents' => $contents,
+            'generationConfig' => [
+                'temperature' => 0.4,
+                'maxOutputTokens' => 1500,
+            ],
+        ];
+
+        $models = array_filter([
+            config('services.gemini.model'),
+            config('services.gemini.fallback_model'),
+        ]);
+
+        $response = null;
+
+        foreach ($models as $model) {
+            $response = Http::timeout(40)
+                ->acceptJson()
+                ->withHeaders(['x-goog-api-key' => config('services.gemini.key')])
+                ->post(
+                    'https://generativelanguage.googleapis.com/v1beta/models/' . $model . ':generateContent',
+                    $payload
+                );
+
+            if (! in_array($response->status(), [429, 500, 503], true)) {
+                break;
+            }
+        }
 
         if ($response->failed()) {
             throw new RequestException($response);
         }
 
-        $answer = data_get(
-            $response->json(),
-            'candidates.0.content.parts.0.text'
-        );
+        $parts = data_get($response->json(), 'candidates.0.content.parts', []);
+
+        $answer = collect($parts)
+        ->filter(fn ($part) => isset($part['text']) && empty($part['thought']))
+        ->pluck('text')
+        ->implode('');
 
         if (! is_string($answer) || trim($answer) === '') {
             return 'Não encontrei essa informação na documentação disponível, mas ficarei feliz em ajudar com outras dúvidas sobre o buffet! 😊';

@@ -83,6 +83,7 @@ class ChatController extends Controller
             ], 503);
         } catch (\Throwable $exception) {
             Log::error('Erro inesperado no chat.', [
+                'class' => get_class($exception),
                 'error' => $exception->getMessage(),
             ]);
 
