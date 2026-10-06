@@ -27,7 +27,7 @@ class ClienteController extends Controller
             ->latest()
             ->get();
 
-        return view('cliente.orcamentos', compact('orcamentos'));
+        return view('cliente.orcamentos.orcamentos', compact('orcamentos'));
     }
 
     public function atualizarAvatar(Request $request)

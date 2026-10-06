@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
     <form
     id="form-logout"
     action="{{ route('logout') }}"
@@ -34,45 +35,7 @@
 
 <div class="dashboard">
 
-    {{-- SIDEBAR --}}
-    <aside class="sidebar">
-
-        <div class="sidebar__logo">
-            <img
-                src="{{ asset('images/logo.png') }}"
-                alt="Anauê Espaço Infantil"
-            >
-        </div>
-
-        <nav class="sidebar__menu">
-
-            <a
-                href="{{ route('cliente.dashboard') }}"
-                @class(['sidebar__link', 'ativo' => request()->routeIs('cliente.dashboard')])
-            >
-                <i class="fa-solid fa-house"></i>
-                <span>Visão Geral</span>
-            </a>
-
-            <a
-                href="{{ route('cliente.orcamentos') }}"
-                @class(['sidebar__link', 'ativo' => request()->routeIs('cliente.orcamentos')])
-            >
-                <i class="fa-regular fa-file-lines"></i>
-                <span>Orçamentos</span>
-            </a>
-
-        
-
-        </nav>
-
-        <button type="submit"form="form-logout" class="btn-logout">
-             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-             <span>Sair</span>
-        </button>
-
-    </aside>
-
+@include('cliente.partials.sidebar')
 
     {{-- CONTEÚDO --}}
     <main class="dashboard__conteudo">

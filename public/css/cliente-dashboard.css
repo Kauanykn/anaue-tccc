@@ -27,23 +27,180 @@ body {
     background-color: #fff;
 }
 
+/* MENU */
 
-/* =========================
-   SIDEBAR
-========================= */
+.cliente-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
-.sidebar {
-    width: 210px;
+
+
+
+/* SIDEBAR */
+
+.cliente-sidebar {
+    width: 220px;
     min-height: 100vh;
 
-    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 
     padding: 28px 18px;
 
+    background: #343434;
+}
+
+.cliente-logo {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 35px;
+}
+
+.cliente-logo img {
+    width: 145px;
+}
+
+/* =========================================================
+SIDEBAR RETRATIL
+========================================================= */
+
+.cliente-sidebar {
+    position: relative;
+    transition: width 0.3s ease;
+    }
+    
+    .cliente-sidebar-toggle {
+    position: absolute;
+    top: 15px;
+    right: -5px;
+    width: 25px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     background-color: #343434;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s ease;
+    }
+    
+    
+    .cliente-sidebar-toggle i {
+    transition: transform 0.3s ease;
+    }
+    
+    .cliente-sidebar.recolhida {
+    width: 80px;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-logo img {
+    width: 45px;
+    margin-right: 10px;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-link {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-link i {
+    margin: 0;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-link {
+    font-size: 0;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-link i {
+    font-size: 18px;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-logout button {
+    justify-content: center;
+    font-size: 0;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-logout i {
+    margin: 0;
+    font-size: 18px;
+    }
+    
+    .cliente-sidebar.recolhida .cliente-sidebar-toggle i {
+    transform: rotate(180deg);
+    }
+
+    .cliente-link {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+    
+        padding: 12px 14px;
+    
+        border-radius: 7px;
+    
+        color: #fff;
+    
+        font-size: 13px;
+        text-decoration: none;
+    
+        transition: 0.2s;
+    }
+    
+    .cliente-link i {
+        width: 18px;
+        text-align: center;
+    }
+    
+    .cliente-link:hover,
+    .cliente-link.ativo {
+        background: #666;
+    }
+    
+    
+    
+    /* LOGOUT */
+
+.cliente-logout {
+    margin-top: auto;
+}
+
+.cliente-logout button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 12px 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
 
     color: #fff;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
+
+.cliente-logout button:hover {
+    background: #f20b78;
+}    
 
 
 /* LOGO */
