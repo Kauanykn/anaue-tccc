@@ -22,7 +22,6 @@ body {
 
 .login {
     position: relative;
-
     width: 100%;
     min-height: 100vh;
 
@@ -61,6 +60,7 @@ body {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background: rgba(0, 0, 0, 0.4);
@@ -75,6 +75,7 @@ body {
 
 .login__conteudo {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -105,26 +106,67 @@ body {
 
 
 /* =========================
-   CARD
+   CARD — EFEITO VIDRO
 ========================= */
 
 .login__card {
+    position: relative;
+
     width: 100%;
 
     padding: 35px 38px 32px;
 
-    background: rgba(25, 25, 25, 0.72);
+    /*
+       Vidro translúcido
+    */
+    background: rgba(255, 255, 255, 0.35);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    /*
+       Desfoque do conteúdo que está atrás
+    */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border-radius: 10px;
+    /*
+       Borda do vidro
+    */
+    border: 1px solid rgba(255, 255, 255, 0.55);
 
-    color: #fff;
+    border-radius: 18px;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    /*
+       Sombra externa + brilho interno
+    */
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    color: #222;
+
+    /*
+       Evita que algum efeito ultrapasse
+       os cantos arredondados
+    */
+    overflow: hidden;
+}
+
+
+/* brilho sutil na parte superior do vidro */
+
+.login__card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    pointer-events: none;
 }
 
 
@@ -135,11 +177,12 @@ body {
 .login__card h1 {
     margin: 0 0 35px;
 
-    color: #fff;
+    color: #222;
 
     text-align: center;
 
     font-size: 26px;
+
     font-weight: 700;
 
     letter-spacing: 1px;
@@ -159,10 +202,11 @@ body {
 
     margin-bottom: 9px;
 
-    color: #fff;
+    color: #222;
 
     font-size: 14px;
-    font-weight: 400;
+
+    font-weight: 500;
 }
 
 .campo-login input {
@@ -171,13 +215,14 @@ body {
     padding: 9px 4px;
 
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
 
     border-radius: 0;
 
     background: transparent;
 
-    color: #fff;
+    color: #222;
 
     font-size: 16px;
 
@@ -186,16 +231,30 @@ body {
     transition: border-color 0.2s ease;
 }
 
+.campo-login input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .campo-login input:focus {
     border-bottom-color: #f20b78;
 }
 
+
+/* =========================
+   AUTOFILL
+========================= */
+
 .campo-login input:-webkit-autofill,
 .campo-login input:-webkit-autofill:hover,
 .campo-login input:-webkit-autofill:focus {
-    -webkit-text-fill-color: #fff;
-    -webkit-box-shadow: 0 0 0 1000px transparent inset;
-    transition: background-color 5000s ease-in-out 0s;
+
+    -webkit-text-fill-color: #222;
+
+    -webkit-box-shadow:
+        0 0 0 1000px transparent inset;
+
+    transition:
+        background-color 5000s ease-in-out 0s;
 }
 
 
@@ -207,9 +266,10 @@ body {
     display: inline-block;
 
     margin-top: -8px;
+
     margin-bottom: 28px;
 
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.7);
 
     font-size: 13px;
 
@@ -233,6 +293,7 @@ body {
     padding: 13px 20px;
 
     border: none;
+
     border-radius: 7px;
 
     background-color: #f20b78;
@@ -240,6 +301,7 @@ body {
     color: #fff;
 
     font-size: 16px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -255,7 +317,8 @@ body {
 
     transform: translateY(-2px);
 
-    box-shadow: 0 8px 20px rgba(242, 11, 120, 0.25);
+    box-shadow:
+        0 8px 20px rgba(242, 11, 120, 0.25);
 }
 
 .btn-entrar:active {
@@ -270,7 +333,7 @@ body {
 .criar-conta {
     margin-top: 24px;
 
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.7);
 
     text-align: center;
 
@@ -278,7 +341,7 @@ body {
 }
 
 .criar-conta a {
-    color: #fff;
+    color: #222;
 
     font-weight: 600;
 
@@ -341,13 +404,25 @@ body {
 
 }
 
+
+/* =========================
+   ERRO DE LOGIN
+========================= */
+
 .erro-login {
     margin-bottom: 20px;
-    color: #ff8b8b;
+
+    color: #b00020;
+
     font-size: 13px;
+
     text-align: center;
 }
-/* CAMPO DE SENHA */
+
+
+/* =========================
+   CAMPO DE SENHA
+========================= */
 
 .campo-senha {
     position: relative;
@@ -357,17 +432,25 @@ body {
     padding-right: 40px;
 }
 
+
+/* =========================
+   MOSTRAR SENHA
+========================= */
+
 .mostrar-senha {
     position: absolute;
+
     right: 5px;
+
     top: 50%;
 
     transform: translateY(-50%);
 
     border: none;
+
     background: transparent;
 
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.65);
 
     font-size: 16px;
 
