@@ -60,5 +60,3 @@
     </div>
 
 </nav>
-
-<script src="{{ asset('jss/navbar.js') }}"></script>

@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/chat-widget.css') }}">
 
     @stack('styles')
+    <link rel="stylesheet" href="{{ asset('css/responsivo.css') }}">
   
 </head>
 

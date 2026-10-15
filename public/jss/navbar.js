@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.nav-menu');
 
     if (!botao || !menu) return;
+    if (botao.dataset.menuInitialized === 'true') return;
+    botao.dataset.menuInitialized = 'true';
 
     botao.addEventListener('click', () => {
         const aberto = menu.classList.toggle('aberto');

@@ -25,6 +25,8 @@
 
 @stack('styles')
 
+<link rel="stylesheet" href="{{ asset('css/responsivo.css') }}">
+
 </head>
 
 <body>
