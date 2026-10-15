@@ -20,6 +20,7 @@
         rel="stylesheet"
         href="{{ asset('css/cliente-dashboard.css') }}"
     >
+    <link rel="stylesheet" href="{{ asset('css/responsivo.css') }}">
 </head>
 
 <body>

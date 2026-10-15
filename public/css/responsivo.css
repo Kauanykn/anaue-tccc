@@ -1,0 +1,63 @@
+/* Regras compartilhadas para celular e tablet. Carregado após os estilos de cada página. */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 320px; }
+img, video, iframe { max-width: 100%; }
+img { height: auto; }
+input, select, textarea, button { max-width: 100%; font: inherit; }
+input, select, textarea { min-width: 0; }
+main, section, article, aside, header, footer { min-width: 0; }
+table { width: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+
+@media (max-width: 900px) {
+    .hero__principal { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+    .hero__fotos { min-width: 0; }
+    .galeria__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .depoimentos-grid, .admin-pacotes-grid, .galeria-admin__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .planner-grid { grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 18px; }
+    .admin-conteudo, .dashboard__conteudo, .cliente-conteudo { min-width: 0; }
+}
+
+@media (max-width: 700px) {
+    body { overflow-x: hidden; }
+    .hero__principal { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .hero__texto { max-width: none; }
+    .hero__fotos { width: min(100%, 440px); margin: 0 auto; }
+    .planner-grid { grid-template-columns: minmax(0, 1fr); }
+    .orcamento-card__dados { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .avaliacoes-resumo { grid-template-columns: minmax(0, 1fr); }
+    .depoimentos-grid, .admin-pacotes-grid, .galeria-admin__grid { grid-template-columns: minmax(0, 1fr); }
+    .admin-conteudo, .dashboard__conteudo, .cliente-conteudo { padding: 24px 16px; }
+    .admin-topo, .orcamento-card__topo, .orcamento-card__contato, .orcamento-card__acoes { flex-wrap: wrap; }
+    .admin-sidebar, .cliente-sidebar { width: 100%; min-height: auto; }
+    .admin-dashboard, .dashboard, .cliente-dashboard { display: block; }
+    .admin-menu, .cliente-menu { flex-direction: row; flex-wrap: wrap; }
+    .admin-sidebar-toggle, .cliente-sidebar-toggle { display: none; }
+    .admin-link, .cliente-link { min-height: 42px; }
+    .admin-logout, .cliente-logout { margin-top: 8px; }
+    .table-responsive, .tabela-responsiva { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .modal-conteudo, .modal-permissao-conteudo, .orcamento-modal { width: min(100%, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto; }
+    .orcamento-modal { padding: 18px 14px; }
+}
+
+@media (max-width: 520px) {
+    .galeria__grid { grid-template-columns: minmax(0, 1fr); }
+    .hero__botoes, .contato__botoes, .acoes-permissao, .form-acoes, .admin-galeria__acoes { flex-direction: column; align-items: stretch; }
+    .hero__botoes > *, .contato__botoes > *, .acoes-permissao > *, .form-acoes > *, .admin-galeria__acoes > * { width: 100%; }
+    .calendar-header { gap: 8px; }
+    .calendar-cell { min-height: 38px; padding: 4px; }
+    .calendar-legend { flex-wrap: wrap; gap: 8px 14px; }
+    .form-row, .form-grid, .form-grid--precos { grid-template-columns: minmax(0, 1fr); }
+    .admin-sidebar, .cliente-sidebar { padding: 12px; }
+    .admin-logo, .cliente-logo { display: none; }
+    .admin-menu, .cliente-menu { justify-content: center; }
+    .admin-link, .cliente-link { flex: 1 1 130px; justify-content: flex-start; font-size: 13px; }
+    .admin-link i, .cliente-link i { font-size: 14px; }
+    .admin-logout button, .cliente-logout button { width: 100%; justify-content: center; font-size: 13px; }
+    .contato { margin-left: 16px; margin-right: 16px; }
+}
+
+@media (hover: none) {
+    .botao:hover, .admin-card:hover, .contato:hover { transform: none; }
+}

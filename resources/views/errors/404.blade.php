@@ -20,6 +20,7 @@
         rel="stylesheet"
         href="{{ asset('css/404.css') }}"
     >
+    <link rel="stylesheet" href="{{ asset('css/responsivo.css') }}">
 </head>
 
 <body>
